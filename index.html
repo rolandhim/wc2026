@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFA World Cup 2026 🇨🇦🇲🇽🇺🇸</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+:root {
+  --bg: #0a0e1a; --surface: #111827; --surface2: #1f2937;
+  --gold: #f59e0b; --gold-light: #fbbf24; --green: #10b981;
+  --blue: #3b82f6; --red: #ef4444; --text: #f3f4f6; --text2: #9ca3af;
+  --border: #1e3a5f; --surface3: #1a2332;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+a { color:var(--gold); text-decoration:none; }
+
+/* ── Nav ── */
+.nav-bar {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,14,26,0.92); backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  padding:0 2rem; display:flex; align-items:center; height:56px; gap:0.5rem;
+}
+.nav-bar a, .nav-bar .nav-link {
+  color:var(--text2); font-size:0.85rem; font-weight:500; padding:0.4rem 0.75rem;
+  border-radius:8px; transition:all 0.2s; cursor:pointer; white-space:nowrap;
+}
+.nav-bar a:hover, .nav-bar .nav-link:hover { color:var(--gold); background:rgba(245,158,11,0.08); }
+.nav-bar .nav-brand { font-weight:800; color:var(--gold) !important; margin-right:0.5rem; font-size:0.9rem; }
+.nav-bar .nav-spacer { flex:1; }
+.nav-bar .nav-teams-btn { position:relative; }
+.nav-team-dropdown {
+  display:none; position:absolute; top:100%; left:0;
+  background:var(--surface); border:1px solid var(--border); border-radius:12px;
+  max-height:70vh; overflow-y:auto; min-width:220px; z-index:200;
+  padding:0.5rem; box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+.nav-bar .nav-teams-btn:hover .nav-team-dropdown,
+.nav-team-dropdown:hover { display:block; }
+.nav-team-dropdown a {
+  display:flex; align-items:center; gap:0.5rem; padding:0.5rem 0.75rem;
+  border-radius:8px; font-size:0.8rem; color:var(--text); 
+}
+.nav-team-dropdown a:hover { background:var(--surface2); }
+
+/* ── Hero ── */
+.hero {
+  min-height:100vh; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; text-align:center; padding:2rem;
+  background:radial-gradient(ellipse at 30% 50%, rgba(245,158,11,0.06) 0%, transparent 60%),
+             radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.06) 0%, transparent 60%);
+}
+.hero-badge { display:flex; gap:0.75rem; margin-bottom:1rem; font-size:1.5rem; }
+.hero h1 {
+  font-size:clamp(3rem,8vw,7rem); font-weight:900;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold),#d97706);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  line-height:1.05; letter-spacing:-2px;
+}
+.hero h2 { font-size:clamp(1rem,2.5vw,1.5rem); color:var(--text2); font-weight:400; margin-top:1rem; }
+.hero-info { margin-top:1.5rem; display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; }
+.hero-info span { padding:0.5rem 1.25rem; background:rgba(255,255,255,0.06); border-radius:100px; font-size:0.9rem; color:var(--text2); border:1px solid rgba(255,255,255,0.08); }
+
+/* ── Page Area ── */
+.page { display:none; max-width:1400px; margin:0 auto; padding:5rem 2rem 3rem; }
+.page.active { display:block; }
+.page-title { font-size:2rem; font-weight:800; margin-bottom:0.25rem; display:flex; align-items:center; gap:0.75rem; }
+.page-sub { color:var(--text2); margin-bottom:2rem; font-size:1.05rem; }
+.back-link { display:inline-flex; align-items:center; gap:0.4rem; color:var(--text2); font-size:0.85rem; margin-bottom:1.5rem; cursor:pointer; }
+.back-link:hover { color:var(--gold); }
+
+/* ── Groups ── */
+.groups-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.5rem; }
+.group-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:transform 0.2s; }
+.group-card:hover { transform:translateY(-2px); }
+.group-header { padding:1rem 1.25rem; font-weight:700; font-size:1.1rem; background:linear-gradient(135deg,rgba(245,158,11,0.12),transparent); border-bottom:1px solid var(--border); }
+.team-row { display:grid; grid-template-columns:auto 1fr auto; align-items:center; padding:0.7rem 1.25rem; border-bottom:1px solid rgba(255,255,255,0.04); font-size:0.9rem; cursor:pointer; transition:background 0.15s; }
+.team-row:last-child { border:none; }
+.team-row:hover { background:rgba(245,158,11,0.06); }
+.team-flag { font-size:1.2rem; }
+.team-name { font-weight:600; }
+.team-badge { font-size:0.6rem; padding:1px 6px; border-radius:4px; margin-left:4px; }
+.team-badge.host { background:rgba(245,158,11,0.15); color:var(--gold); }
+.team-badge.debut { background:rgba(16,185,129,0.15); color:var(--green); }
+.team-mini-fixtures { padding:0.6rem 1.25rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.3rem; }
+.team-mini-fixtures span { font-size:0.65rem; color:var(--text2); background:rgba(255,255,255,0.04); padding:2px 6px; border-radius:4px; }
+
+/* ── Fixtures ── */
+.fixtures-list { display:flex; flex-direction:column; gap:0.6rem; }
+.fixture-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:0.9rem 1.25rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.fixture-date { min-width:85px; font-weight:600; color:var(--gold); font-size:0.85rem; }
+.fixture-teams { flex:1; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+.fixture-team { font-weight:600; cursor:pointer; }
+.fixture-team:hover { color:var(--gold); }
+.fixture-vs { color:var(--text2); font-size:0.8rem; }
+.fixture-info { font-size:0.8rem; color:var(--text2); display:flex; align-items:center; gap:0.5rem; margin-left:auto; }
+.fixture-round { font-size:0.75rem; background:rgba(59,130,246,0.15); color:var(--blue); padding:2px 8px; border-radius:6px; }
+
+/* ── Venues ── */
+.venues-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1rem; }
+.venue-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; }
+.venue-card h4 { font-size:1rem; margin-bottom:0.25rem; }
+.venue-city { color:var(--text2); font-size:0.85rem; }
+.venue-cap { font-size:0.8rem; color:var(--gold); margin-top:0.35rem; }
+.venue-country { font-size:0.75rem; display:inline-block; padding:2px 8px; border-radius:6px; margin-top:0.5rem; }
+.venue-country.usa { background:rgba(59,130,246,0.15); color:var(--blue); }
+.venue-country.mex { background:rgba(16,185,129,0.15); color:var(--green); }
+.venue-country.can { background:rgba(239,68,68,0.15); color:var(--red); }
+
+/* ── Teams Cloud ── */
+.teams-cloud { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; }
+.team-tag { padding:0.45rem 1rem; background:var(--surface); border:1px solid var(--border); border-radius:100px; font-size:0.85rem; font-weight:500; display:flex; align-items:center; gap:0.4rem; cursor:pointer; transition:all 0.2s; }
+.team-tag:hover { border-color:var(--gold); transform:translateY(-1px); }
+.team-tag.debut { border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.06); }
+.team-tag .debut-tag { font-size:0.6rem; background:rgba(16,185,129,0.2); color:var(--green); padding:1px 5px; border-radius:4px; }
+
+/* ── Knockout ── */
+.ko-bracket { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
+.ko-round { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; min-width:150px; text-align:center; }
+.ko-round h4 { font-size:0.85rem; color:var(--gold); margin-bottom:0.35rem; }
+.ko-round p { font-size:0.8rem; color:var(--text2); }
+.ko-round .ko-venue { font-size:0.75rem; color:var(--text2); margin-top:0.25rem; }
+.ko-round.final { border-color:var(--gold); }
+
+/* ── Team Detail Page ── */
+.team-detail-header { display:flex; align-items:center; gap:1.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+.team-detail-flag { font-size:4rem; }
+.team-detail-name { font-size:2rem; font-weight:800; }
+.team-detail-meta { color:var(--text2); font-size:1rem; }
+.team-detail-meta span { margin-right:1.5rem; }
+.team-detail-group { color:var(--gold); font-weight:600; }
+
+.squad-section { margin-top:2rem; }
+.squad-section h3 { font-size:1.2rem; font-weight:700; margin:1.5rem 0 0.75rem; display:flex; align-items:center; gap:0.5rem; }
+.squad-section .pos-tag { font-size:0.7rem; padding:2px 8px; border-radius:6px; }
+.pos-tag.gk { background:rgba(239,68,68,0.15); color:var(--red); }
+.pos-tag.def { background:rgba(59,130,246,0.15); color:var(--blue); }
+.pos-tag.mid { background:rgba(16,185,129,0.15); color:var(--green); }
+.pos-tag.fwd { background:rgba(245,158,11,0.15); color:var(--gold); }
+
+.squad-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:0.6rem; }
+.player-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.75rem 1rem; display:flex; align-items:center; gap:0.75rem; }
+.player-num { font-weight:700; color:var(--text2); font-size:0.8rem; min-width:1.5rem; }
+.player-name { font-weight:600; flex:1; }
+.player-kanji { font-size:0.75rem; color:var(--text2); font-weight:400; display:block; }
+.player-club { font-size:0.75rem; color:var(--text2); }
+
+.squad-status { padding:1rem 1.5rem; background:var(--surface2); border-radius:12px; margin-top:1rem; }
+.squad-status.confirmed { border-left:3px solid var(--green); }
+.squad-status.pending { border-left:3px solid var(--gold); }
+
+/* ── Filter Tabs ── */
+.filter-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.filter-tab { padding:0.4rem 1rem; border-radius:100px; font-size:0.8rem; cursor:pointer; background:var(--surface2); color:var(--text2); border:1px solid transparent; transition:all 0.2s; }
+.filter-tab:hover { border-color:var(--border); }
+.filter-tab.active { background:rgba(245,158,11,0.12); color:var(--gold); border-color:rgba(245,158,11,0.3); }
+
+footer { text-align:center; padding:3rem 2rem; color:var(--text2); font-size:0.85rem; border-top:1px solid var(--border); margin-top:2rem; }
+
+@media(max-width:640px) {
+  .groups-grid { grid-template-columns:1fr; }
+  .venues-grid { grid-template-columns:1fr; }
+  .hero h1 { font-size:2.5rem; }
+  .fixture-card { flex-direction:column; align-items:flex-start; }
+  .fixture-info { margin-left:0; }
+  .nav-bar { padding:0 1rem; overflow-x:auto; }
+  .squad-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav-bar">
+  <a href="#" class="nav-brand" onclick="showPage('home')">⚽ WC2026</a>
+  <a href="#" onclick="showPage('home')">🏆 分組</a>
+  <a href="#" onclick="showPage('fixtures')">📅 賽程</a>
+  <a href="#" onclick="showPage('teams')">🌍 球隊</a>
+  <span class="nav-link nav-teams-btn">
+    🏃 球員名單 ▾
+    <div class="nav-team-dropdown" id="teamDropdown"></div>
+  </span>
+  <a href="#" onclick="showPage('venues')">🏟️ 場地</a>
+  <a href="#" onclick="showPage('knockout')">🔮 淘汰賽</a>
+</nav>
+
+<!-- ─── PAGE: HOME ─── -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-badge">🇨🇦 🇲🇽 🇺🇸</div>
+    <h1>WORLD CUP<br>2026</h1>
+    <h2>Canada · Mexico · United States</h2>
+    <div class="hero-info">
+      <span>🗓️ Jun 11 – Jul 19</span>
+      <span>🏟️ 16 Venues</span>
+      <span>👥 48 Teams · 104 Matches</span>
+      <span>🏆 Final: MetLife Stadium</span>
+    </div>
+  </section>
+
+  <div style="max-width:1400px;margin:0 auto;padding:0 2rem 3rem;" id="groups-section">
+    <h3 class="page-title">🏆 分組形勢</h3>
+    <p class="page-sub">點按球隊即可查看完整球員名單</p>
+    <div class="groups-grid" id="groupsContainer"></div>
+  </div>
+</div>
+
+<!-- ─── PAGE: FIXTURES ─── -->
+<div class="page" id="page-fixtures">
+  <h3 class="page-title">📅 賽程</h3>
+  <p class="page-sub">全部 72 場分組賽 · 點按球隊查看名單</p>
+  <div class="filter-tabs" id="fixtureFilter">
+    <span class="filter-tab active" data-group="all" onclick="filterFixtures('all')">全部</span>
+    <span class="filter-tab" data-group="A" onclick="filterFixtures('A')">A组</span>
+    <span class="filter-tab" data-group="B" onclick="filterFixtures('B')">B</span>
+    <span class="filter-tab" data-group="C" onclick="filterFixtures('C')">C</span>
+    <span class="filter-tab" data-group="D" onclick="filterFixtures('D')">D</span>
+    <span class="filter-tab" data-group="E" onclick="filterFixtures('E')">E</span>
+    <span class="filter-tab" data-group="F" onclick="filterFixtures('F')">F</span>
+    <span class="filter-tab" data-group="G" onclick="filterFixtures('G')">G</span>
+    <span class="filter-tab" data-group="H" onclick="filterFixtures('H')">H</span>
+    <span class="filter-tab" data-group="I" onclick="filterFixtures('I')">I</span>
+    <span class="filter-tab" data-group="J" onclick="filterFixtures('J')">J</span>
+    <span class="filter-tab" data-group="K" onclick="filterFixtures('K')">K</span>
+    <span class="filter-tab" data-group="L" onclick="filterFixtures('L')">L</span>
+  </div>
+  <div class="fixtures-list" id="fixturesContainer"></div>
+</div>
+
+<!-- ─── PAGE: TEAMS ─── -->
+<div class="page" id="page-teams">
+  <h3 class="page-title">🌍 參賽球隊</h3>
+  <p class="page-sub">48 支球隊 · 🟢 = 首次參賽 · 點按查看球員名單</p>
+  <div class="teams-cloud" id="teamsContainer"></div>
+</div>
+
+<!-- ─── PAGE: TEAM DETAIL ─── -->
+<div class="page" id="page-team">
+  <a class="back-link" onclick="historyBack()">← 返回球隊列表</a>
+  <div id="teamDetailContent"></div>
+</div>
+
+<!-- ─── PAGE: VENUES ─── -->
+<div class="page" id="page-venues">
+  <h3 class="page-title">🏟️ 場地</h3>
+  <p class="page-sub">16 個城市 · 🇨🇦 2 · 🇲🇽 3 · 🇺🇸 11</p>
+  <div class="venues-grid" id="venuesContainer"></div>
+</div>
+
+<!-- ─── PAGE: KNOCKOUT ─── -->
+<div class="page" id="page-knockout">
+  <h3 class="page-title">🔮 淘汰賽</h3>
+  <p class="page-sub">32 強 → 16 強 → 8 強 → 4 強 → 決賽</p>
+  <div class="ko-bracket" id="koContainer"></div>
+</div>
+
+<footer>
+  <p>資料來源：<a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup" target="_blank">Wikipedia</a> · FIFA.com</p>
+  <p style="margin-top:0.5rem">Made with ⚽ by 書銘</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════
+
+const SQUADS = {
+  brazil: { coach: 'Carlo Ancelotti 🇮🇹', announced: 'May 18', status: 'confirmed',
+    gk: [{n:'Alisson',c:'Liverpool'},{n:'Ederson',c:'Fenerbahçe'},{n:'Weverton',c:'Grêmio'}],
+    def: [{n:'Marquinhos',c:'PSG'},{n:'Danilo',c:'Flamengo'},{n:'Alex Sandro',c:'Flamengo'},{n:'Gabriel Magalhães',c:'Arsenal'},{n:'Bremer',c:'Juventus'},{n:'Wesley',c:'Roma'},{n:'Roger Ibañez',c:'Al-Ahli'},{n:'Douglas Santos',c:'Zenit'},{n:'Léo Pereira',c:'Flamengo'}],
+    mid: [{n:'Casemiro',c:'Man Utd'},{n:'Lucas Paquetá',c:'Flamengo'},{n:'Bruno Guimarães',c:'Newcastle'},{n:'Fabinho',c:'Al-Ittihad'},{n:'Danilo Santos',c:'Botafogo'}],
+    fwd: [{n:'Neymar',c:'Santos'},{n:'Vinícius Jr',c:'Real Madrid'},{n:'Raphinha',c:'Barcelona'},{n:'Gabriel Martinelli',c:'Arsenal'},{n:'Matheus Cunha',c:'Man Utd'},{n:'Endrick',c:'Lyon'},{n:'Luiz Henrique',c:'Zenit'},{n:'Igor Thiago',c:'Brentford'},{n:'Rayan',c:'Bournemouth'}] },
+  france: { coach: 'Didier Deschamps', announced: 'May 14', status: 'confirmed',
+    gk: [{n:'Mike Maignan',c:'Milan'},{n:'Brice Samba',c:'Rennes'},{n:'Robin Risser',c:'Lens'}],
+    def: [{n:'Lucas Digne',c:'Aston Villa'},{n:'Jules Koundé',c:'Barcelona'},{n:'Théo Hernandez',c:'Al-Hilal'},{n:'Lucas Hernandez',c:'PSG'},{n:'Dayot Upamecano',c:'Bayern'},{n:'William Saliba',c:'Arsenal'},{n:'Ibrahima Konaté',c:'Liverpool'},{n:'Malo Gusto',c:'Chelsea'},{n:'Maxence Lacroix',c:'Crystal Palace'}],
+    mid: [{n:'N\'Golo Kanté',c:'Fenerbahçe'},{n:'Adrien Rabiot',c:'Milan'},{n:'Aurélien Tchouaméni',c:'Real Madrid'},{n:'Manu Koné',c:'Roma'},{n:'Warren Zaïre-Emery',c:'PSG'}],
+    fwd: [{n:'Kylian Mbappé',c:'Real Madrid'},{n:'Ousmane Dembélé',c:'PSG'},{n:'Marcus Thuram',c:'Inter'},{n:'Bradley Barcola',c:'PSG'},{n:'Michael Olise',c:'Bayern'},{n:'Maghnes Akliouche',c:'Monaco'},{n:'Désiré Doué',c:'PSG'},{n:'Rayan Cherki',c:'Man City'},{n:'Jean-Philippe Mateta',c:'Crystal Palace'}] },
+  portugal: { coach: 'Roberto Martínez 🇪🇸', announced: 'May 19', status: 'confirmed',
+    gk: [{n:'Diogo Costa',c:'Porto'},{n:'José Sá',c:'Wolves'},{n:'Rui Silva',c:'Sporting CP'}],
+    def: [{n:'Rúben Dias',c:'Man City'},{n:'João Cancelo',c:'Barcelona'},{n:'Nélson Semedo',c:'Fenerbahçe'},{n:'Nuno Mendes',c:'PSG'},{n:'Diogo Dalot',c:'Man Utd'},{n:'Gonçalo Inácio',c:'Sporting CP'},{n:'Matheus Nunes',c:'Man City'},{n:'Renato Veiga',c:'Villarreal'},{n:'Tomás Araújo',c:'Benfica'}],
+    mid: [{n:'Bernardo Silva',c:'Man City'},{n:'Bruno Fernandes',c:'Man Utd'},{n:'Rúben Neves',c:'Al-Hilal'},{n:'Vitinha',c:'PSG'},{n:'João Neves',c:'PSG'},{n:'Samú Costa',c:'Mallorca'}],
+    fwd: [{n:'Cristiano Ronaldo',c:'Al-Nassr'},{n:'João Félix',c:'Al-Nassr'},{n:'Rafael Leão',c:'Milan'},{n:'Gonçalo Guedes',c:'Real Sociedad'},{n:'Gonçalo Ramos',c:'PSG'},{n:'Pedro Neto',c:'Chelsea'},{n:'Francisco Trincão',c:'Sporting CP'},{n:'Francisco Conceição',c:'Juventus'}] },
+  croatia: { coach: 'Zlatko Dalić', announced: 'May 18', status: 'confirmed',
+    gk: [{n:'Dominik Livaković',c:'Dinamo Zagreb'},{n:'Dominik Kotarski',c:'Copenhagen'},{n:'Ivor Pandur',c:'Hull City'}],
+    def: [{n:'Joško Gvardiol',c:'Man City'},{n:'Duje Ćaleta-Car',c:'Real Sociedad'},{n:'Josip Šutalo',c:'Ajax'},{n:'Josip Stanišić',c:'Bayern'},{n:'Marin Pongračić',c:'Fiorentina'},{n:'Martin Erlić',c:'Midtjylland'},{n:'Luka Vušković',c:'Hamburger SV'}],
+    mid: [{n:'Luka Modrić',c:'Milan'},{n:'Mateo Kovačić',c:'Man City'},{n:'Mario Pašalić',c:'Atalanta'},{n:'Nikola Vlašić',c:'Torino'},{n:'Luka Sučić',c:'Real Sociedad'},{n:'Martin Baturina',c:'Como'},{n:'Kristijan Jakić',c:'Augsburg'},{n:'Petar Sučić',c:'Inter'},{n:'Nikola Moro',c:'Bologna'},{n:'Toni Fruk',c:'Rijeka'}],
+    fwd: [{n:'Ivan Perišić',c:'PSV'},{n:'Andrej Kramarić',c:'Hoffenheim'},{n:'Ante Budimir',c:'Osasuna'},{n:'Marco Pašalić',c:'Orlando City'},{n:'Petar Musa',c:'FC Dallas'},{n:'Igor Matanović',c:'Freiburg'}] },
+  germany: { coach: 'Julian Nagelsmann', announced: 'May 21', status: 'confirmed',
+    gk: [{n:'Manuel Neuer',c:'Bayern'},{n:'Oliver Baumann',c:'Hoffenheim'},{n:'Alexander Nübel',c:'Stuttgart'}],
+    def: [{n:'Antonio Rüdiger',c:'Real Madrid'},{n:'Jonathan Tah',c:'Bayern'},{n:'David Raum',c:'RB Leipzig'},{n:'Nico Schlotterbeck',c:'Dortmund'},{n:'Waldemar Anton',c:'Dortmund'},{n:'Malick Thiaw',c:'Newcastle'},{n:'Nathaniel Brown',c:'Eintracht Frankfurt'}],
+    mid: [{n:'Joshua Kimmich',c:'Bayern'},{n:'Leroy Sané',c:'Galatasaray'},{n:'Leon Goretzka',c:'Bayern'},{n:'Jamal Musiala',c:'Bayern'},{n:'Florian Wirtz',c:'Liverpool'},{n:'Pascal Groß',c:'Brighton'},{n:'Nadiem Amiri',c:'Mainz'},{n:'Aleksandar Pavlović',c:'Bayern'},{n:'Angelo Stiller',c:'Stuttgart'},{n:'Felix Nmecha',c:'Dortmund'},{n:'Jamie Leweling',c:'Stuttgart'},{n:'Lennart Karl',c:'Bayern'}],
+    fwd: [{n:'Kai Havertz',c:'Arsenal'},{n:'Nick Woltemade',c:'Newcastle'},{n:'Deniz Undav',c:'Stuttgart'},{n:'Maximilian Beier',c:'Dortmund'}] },
+  japan: { coach: 'Hajime Moriyasu', announced: 'May 15', status: 'confirmed',
+    gk: [{n:'Zion Suzuki',j:'鈴木 彩艶',c:'Parma'},{n:'Keisuke Ōsako',j:'大迫 敬介',c:'Sanfrecce Hiroshima'},{n:'Tomoki Hayakawa',j:'早川 友基',c:'Kashima Antlers'}],
+    def: [{n:'Yūto Nagatomo',j:'長友 佑都',c:'FC Tokyo'},{n:'Takehiro Tomiyasu',j:'冨安 健洋',c:'Ajax'},{n:'Kō Itakura',j:'板倉 滉',c:'Ajax'},{n:'Shōgo Taniguchi',j:'谷口 彰悟',c:'Sint-Truiden'},{n:'Hiroki Itō',j:'伊藤 洋輝',c:'Bayern'},{n:'Yukinari Sugawara',j:'菅原 由勢',c:'Werder Bremen'},{n:'Ayumu Seko',j:'瀬古 歩夢',c:'Le Havre'},{n:'Tsuyoshi Watanabe',j:'渡邊 剛',c:'Feyenoord'},{n:'Junnosuke Suzuki',j:'鈴木 準之介',c:'Copenhagen'}],
+    mid: [{n:'Wataru Endo',j:'遠藤 航',c:'Liverpool'},{n:'Junya Itō',j:'伊東 純也',c:'Genk'},{n:'Ritsu Dōan',j:'堂安 律',c:'Eintracht Frankfurt'},{n:'Daichi Kamada',j:'鎌田 大地',c:'Crystal Palace'},{n:'Takefusa Kubo',j:'久保 建英',c:'Real Sociedad'},{n:'Ao Tanaka',j:'田中 碧',c:'Leeds'},{n:'Keito Nakamura',j:'中村 敬斗',c:'Reims'},{n:'Kaishū Sano',j:'佐野 海舟',c:'Mainz'}],
+    fwd: [{n:'Ayase Ueda',j:'上田 綺世',c:'Feyenoord'},{n:'Daizen Maeda',j:'前田 大然',c:'Celtic'},{n:'Kōki Ogawa',j:'小川 航基',c:'NEC'},{n:'Yuito Suzuki',j:'鈴木 唯人',c:'Freiburg'},{n:'Keisuke Gotō',j:'後藤 啓介',c:'Sint-Truiden'},{n:'Kento Shiogai',j:'潮貝 健斗',c:'Wolfsburg'}] },
+  southKorea: { coach: 'Hong Myung-bo', announced: 'May 16', status: 'confirmed',
+    gk: [{n:'Kim Seung-gyu',h:'金承奎',c:'FC Tokyo'},{n:'Jo Hyeon-woo',h:'趙賢祐',c:'Ulsan HD'},{n:'Song Bum-keun',h:'宋範根',c:'Jeonbuk'}],
+    def: [{n:'Kim Min-jae',h:'金玟哉',c:'Bayern'},{n:'Kim Moon-hwan',h:'金紋煥',c:'Daejeon'},{n:'Seol Young-woo',h:'薛英佑',c:'Red Star Belgrade'},{n:'Cho Yu-min',h:'曺侑珉',c:'Sharjah'},{n:'Lee Tae-seok',h:'李太錫',c:'Austria Wien'},{n:'Park Jin-seob',h:'朴鎭燮',c:'Zhejiang'},{n:'Kim Tae-hyeon',h:'金泰鉉',c:'Kashima Antlers'},{n:'Lee Han-beom',h:'李漢範',c:'Midtjylland'},{n:'Jens Castrop',h:'延斯',c:"M'gladbach"},{n:'Lee Ki-hyuk',h:'李基赫',c:'Gangwon'}],
+    mid: [{n:'Lee Jae-sung',h:'李在城',c:'Mainz'},{n:'Hwang Hee-chan',h:'黃喜燦',c:'Wolves'},{n:'Hwang In-beom',h:'黃仁範',c:'Feyenoord'},{n:'Lee Kang-in',h:'李剛仁',c:'PSG'},{n:'Paik Seung-ho',h:'白昇浩',c:'Birmingham'},{n:'Kim Jin-gyu',h:'金鎭圭',c:'Jeonbuk'},{n:'Lee Dong-gyeong',h:'李東炅',c:'Ulsan HD'},{n:'Bae Jun-ho',h:'裵俊鎬',c:'Stoke City'},{n:'Eom Ji-sung',h:'嚴智星',c:'Swansea'},{n:'Yang Hyun-jun',h:'楊賢俊',c:'Celtic'}],
+    fwd: [{n:'Son Heung-min',h:'孫興慜',c:'LAFC'},{n:'Cho Gue-sung',h:'曺圭成',c:'Midtjylland'},{n:'Oh Hyeon-gyu',h:'吳賢揆',c:'Beşiktaş'}] },
+  switzerland: { coach: 'Murat Yakin', announced: 'May 20', status: 'confirmed',
+    gk: [{n:'Gregor Kobel',c:'Dortmund'},{n:'Yvon Mvogo',c:'Lorient'},{n:'Marvin Keller',c:'Young Boys'}],
+    def: [{n:'Ricardo Rodriguez',c:'Real Betis'},{n:'Manuel Akanji',c:'Inter'},{n:'Nico Elvedi',c:'M\'gladbach'},{n:'Silvan Widmer',c:'Mainz'},{n:'Eray Cömert',c:'Valencia'},{n:'Miro Muheim',c:'Hamburger SV'},{n:'Aurèle Amenda',c:'Eintracht Frankfurt'},{n:'Luca Jaquez',c:'Stuttgart'}],
+    mid: [{n:'Granit Xhaka',c:'Sunderland'},{n:'Remo Freuler',c:'Bologna'},{n:'Denis Zakaria',c:'Monaco'},{n:'Djibril Sow',c:'Sevilla'},{n:'Michel Aebischer',c:'Pisa'},{n:'Fabian Rieder',c:'Augsburg'},{n:'Christian Fassnacht',c:'Young Boys'},{n:'Johan Manzambi',c:'Freiburg'},{n:'Ardon Jashari',c:'Milan'}],
+    fwd: [{n:'Breel Embolo',c:'Rennes'},{n:'Rubén Vargas',c:'Sevilla'},{n:'Dan Ndoye',c:'Nottingham Forest'},{n:'Zeki Amdouni',c:'Burnley'},{n:'Noah Okafor',c:'Leeds'},{n:'Cedric Itten',c:'Fortuna Düsseldorf'}] },
+  belgium: { coach: 'Rudi Garcia 🇫🇷', announced: 'May 15', status: 'confirmed',
+    gk: [{n:'Thibaut Courtois',c:'Real Madrid'},{n:'Senne Lammens',c:'Man Utd'},{n:'Mike Penders',c:'Strasbourg'}],
+    def: [{n:'Thomas Meunier',c:'Lille'},{n:'Timothy Castagne',c:'Fulham'},{n:'Arthur Theate',c:'Eintracht Frankfurt'},{n:'Zeno Debast',c:'Sporting CP'},{n:'Maxim De Cuyper',c:'Brighton'},{n:'Brandon Mechele',c:'Club Brugge'},{n:'Koni De Winter',c:'Milan'},{n:'Joaquin Seys',c:'Club Brugge'},{n:'Nathan Ngoy',c:'Lille'}],
+    mid: [{n:'Axel Witsel',c:'Girona'},{n:'Kevin De Bruyne',c:'Napoli'},{n:'Youri Tielemans',c:'Aston Villa'},{n:'Hans Vanaken',c:'Club Brugge'},{n:'Amadou Onana',c:'Aston Villa'},{n:'Nicolas Raskin',c:'Rangers'}],
+    fwd: [{n:'Romelu Lukaku',c:'Napoli'},{n:'Leandro Trossard',c:'Arsenal'},{n:'Jérémy Doku',c:'Man City'},{n:'Dodi Lukébakio',c:'Benfica'},{n:'Charles De Ketelaere',c:'Atalanta'},{n:'Alexis Saelemaekers',c:'Milan'},{n:'Diego Moreira',c:'Strasbourg'},{n:'Matias Fernandez-Pardo',c:'Lille'}] }
+};
+
+const COACHES = {
+  mexico:'Javier Aguirre', southAfrica:'Hugo Broos 🇧🇪', southKorea:'Hong Myung-bo',
+  czechRepublic:'Miroslav Koubek', canada:'Jesse Marsch 🇺🇸', bosnia:'Sergej Barbarez',
+  qatar:'Julen Lopetegui 🇪🇸', switzerland:'Murat Yakin', usa:'Mauricio Pochettino 🇦🇷',
+  paraguay:'Gustavo Alfaro 🇦🇷', australia:'Tony Popovic', turkey:'Vincenzo Montella 🇮🇹',
+  brazil:'Carlo Ancelotti 🇮🇹', morocco:'Mohamed Ouahbi', haiti:'Sébastien Migné 🇫🇷',
+  scotland:'Steve Clarke', netherlands:'Ronald Koeman', japan:'Hajime Moriyasu',
+  sweden:'Graham Potter 🏴󠁧󠁢󠁥󠁮󠁧󠁿', tunisia:'Sabri Lamouchi 🇫🇷',
+  germany:'Julian Nagelsmann', curaçao:'Dick Advocaat 🇳🇱', ivoryCoast:'Emerse Faé',
+  ecuador:'Sebastián Beccacece 🇦🇷', belgium:'Rudi Garcia 🇫🇷', egypt:'Hossam Hassan',
+  iran:'Amir Ghalenoei', newZealand:'Darren Bazeley 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  spain:'Luis de la Fuente', capeVerde:'Bubista', saudiArabia:'Georgios Donis 🇬🇷',
+  uruguay:'Marcelo Bielsa 🇦🇷', france:'Didier Deschamps', senegal:'Pape Thiaw',
+  iraq:'Graham Arnold 🇦🇺', norway:'Ståle Solbakken',
+  argentina:'Lionel Scaloni', algeria:'Vladimir Petković 🇨🇭', austria:'Ralf Rangnick 🇩🇪',
+  jordan:'Jamal Sellami 🇲🇦', portugal:'Roberto Martínez 🇪🇸', drCongo:'Sébastien Desabre 🇫🇷',
+  uzbekistan:'Fabio Cannavaro 🇮🇹', colombia:'Néstor Lorenzo 🇦🇷',
+  england:'Thomas Tuchel 🇩🇪', croatia:'Zlatko Dalić', ghana:'Carlos Queiroz 🇵🇹',
+  panama:'Thomas Christiansen 🇪🇸'
+};
+const SQUAD_STATUS = {
+  england:'⏳ 今日 (May 22) 宣布', mexico:'⏳ 6月1日前', southAfrica:'⏳ 5月27日',
+  czechRepublic:'⏳ 5月31日', canada:'⏳ 5月29日', qatar:'⏳ 待定', australia:'⏳ 6月1日',
+  paraguay:'⏳ 待定', turkey:'⏳ 待定', morocco:'⏳ 5月26日', netherlands:'⏳ 5月27日',
+  ecuador:'⏳ 6月1日', egypt:'⏳ 5月29日', iran:'⏳ 6月1日', senegal:'⏳ 待定',
+  iraq:'⏳ 6月1日', norway:'⏳ 待定', spain:'⏳ 5月25日', saudiArabia:'⏳ 待定',
+  algeria:'⏳ 5月31日', argentina:'⏳ 待定', jordan:'⏳ 待定', colombia:'⏳ 6月1日',
+  uzbekistan:'⏳ 待定', ghana:'⏳ 待定', panama:'⏳ 5月26日', usa:'⏳ 5月26日',
+  uruguay:'⏳ 待定'
+};
+const SQUAD_KEYS = {
+  brazil:'brazil', france:'france', portugal:'portugal', croatia:'croatia',
+  germany:'germany', japan:'japan', southKorea:'southKorea', switzerland:'switzerland',
+  belgium:'belgium'
+};
+function getSquadKey(name) {
+  const m = { 'Brazil':'brazil','France':'france','Portugal':'portugal','Croatia':'croatia',
+    'Germany':'germany','Japan':'japan','South Korea':'southKorea','Switzerland':'switzerland','Belgium':'belgium' };
+  return m[name];
+}
+
+const GROUPS = [
+  { letter:'A', teams:[
+    { nm:'Mexico',flag:'🇲🇽',host:true },{ nm:'South Africa',flag:'🇿🇦' },
+    { nm:'South Korea',flag:'🇰🇷' },{ nm:'Czech Republic',flag:'🇨🇿' }
+  ]},
+  { letter:'B', teams:[
+    { nm:'Canada',flag:'🇨🇦',host:true },{ nm:'Bosnia & Herzegovina',flag:'🇧🇦' },
+    { nm:'Qatar',flag:'🇶🇦' },{ nm:'Switzerland',flag:'🇨🇭' }
+  ]},
+  { letter:'C', teams:[
+    { nm:'Brazil',flag:'🇧🇷' },{ nm:'Morocco',flag:'🇲🇦' },
+    { nm:'Haiti',flag:'🇭🇹' },{ nm:'Scotland',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿' }
+  ]},
+  { letter:'D', teams:[
+    { nm:'United States',flag:'🇺🇸',host:true },{ nm:'Paraguay',flag:'🇵🇾' },
+    { nm:'Australia',flag:'🇦🇺' },{ nm:'Turkey',flag:'🇹🇷' }
+  ]},
+  { letter:'E', teams:[
+    { nm:'Germany',flag:'🇩🇪' },{ nm:'Curaçao',flag:'🇨🇼',debut:true },
+    { nm:'Ivory Coast',flag:'🇨🇮' },{ nm:'Ecuador',flag:'🇪🇨' }
+  ]},
+  { letter:'F', teams:[
+    { nm:'Netherlands',flag:'🇳🇱' },{ nm:'Japan',flag:'🇯🇵' },
+    { nm:'Sweden',flag:'🇸🇪' },{ nm:'Tunisia',flag:'🇹🇳' }
+  ]},
+  { letter:'G', teams:[
+    { nm:'Belgium',flag:'🇧🇪' },{ nm:'Egypt',flag:'🇪🇬' },
+    { nm:'Iran',flag:'🇮🇷' },{ nm:'New Zealand',flag:'🇳🇿' }
+  ]},
+  { letter:'H', teams:[
+    { nm:'Spain',flag:'🇪🇸' },{ nm:'Cape Verde',flag:'🇨🇻',debut:true },
+    { nm:'Saudi Arabia',flag:'🇸🇦' },{ nm:'Uruguay',flag:'🇺🇾' }
+  ]},
+  { letter:'I', teams:[
+    { nm:'France',flag:'🇫🇷' },{ nm:'Senegal',flag:'🇸🇳' },
+    { nm:'Iraq',flag:'🇮🇶' },{ nm:'Norway',flag:'🇳🇴' }
+  ]},
+  { letter:'J', teams:[
+    { nm:'Argentina',flag:'🇦🇷' },{ nm:'Algeria',flag:'🇩🇿' },
+    { nm:'Austria',flag:'🇦🇹' },{ nm:'Jordan',flag:'🇯🇴',debut:true }
+  ]},
+  { letter:'K', teams:[
+    { nm:'Portugal',flag:'🇵🇹' },{ nm:'DR Congo',flag:'🇨🇩' },
+    { nm:'Uzbekistan',flag:'🇺🇿',debut:true },{ nm:'Colombia',flag:'🇨🇴' }
+  ]},
+  { letter:'L', teams:[
+    { nm:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿' },{ nm:'Croatia',flag:'🇭🇷' },
+    { nm:'Ghana',flag:'🇬🇭' },{ nm:'Panama',flag:'🇵🇦' }
+  ]}
+];
+
+const ALL_FIXTURES = [
+  {d:'Jun 11',a:'Mexico',b:'South Africa',g:'A',v:'Estadio Azteca, Mexico City'},
+  {d:'Jun 11',a:'South Korea',b:'Czech Republic',g:'A',v:'Estadio Akron, Guadalajara'},
+  {d:'Jun 12',a:'Canada',b:'Bosnia & Herzegovina',g:'B',v:'BMO Field, Toronto'},
+  {d:'Jun 12',a:'United States',b:'Paraguay',g:'D',v:'SoFi Stadium, Los Angeles'},
+  {d:'Jun 13',a:'Qatar',b:'Switzerland',g:'B',v:'BC Place, Vancouver'},
+  {d:'Jun 13',a:'Australia',b:'Turkey',g:'D',v:'Lumen Field, Seattle'},
+  {d:'Jun 13',a:'Brazil',b:'Morocco',g:'C',v:'SoFi Stadium, Los Angeles'},
+  {d:'Jun 13',a:'Haiti',b:'Scotland',g:'C',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 14',a:'Netherlands',b:'Japan',g:'F',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 14',a:'Sweden',b:'Tunisia',g:'F',v:'Gillette Stadium, Boston'},
+  {d:'Jun 14',a:'Germany',b:'Curaçao',g:'E',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 14',a:'Ivory Coast',b:'Ecuador',g:'E',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 15',a:'Spain',b:'Cape Verde',g:'H',v:'Mercedes-Benz Stadium, Atlanta'},
+  {d:'Jun 15',a:'Saudi Arabia',b:'Uruguay',g:'H',v:'NRG Stadium, Houston'},
+  {d:'Jun 15',a:'Belgium',b:'Egypt',g:'G',v:'NRG Stadium, Houston'},
+  {d:'Jun 15',a:'Iran',b:'New Zealand',g:'G',v:'AT&T Stadium, Dallas'},
+  {d:'Jun 16',a:'France',b:'Senegal',g:'I',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 16',a:'Iraq',b:'Norway',g:'I',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 16',a:'Argentina',b:'Algeria',g:'J',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 16',a:'Austria',b:'Jordan',g:'J',v:'Mercedes-Benz Stadium, Atlanta'},
+  {d:'Jun 17',a:'Portugal',b:'DR Congo',g:'K',v:'SoFi Stadium, Los Angeles'},
+  {d:'Jun 17',a:'Uzbekistan',b:'Colombia',g:'K',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 17',a:'England',b:'Croatia',g:'L',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 17',a:'Ghana',b:'Panama',g:'L',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 18',a:'Czech Republic',b:'South Africa',g:'A',v:'Estadio BBVA, Monterrey'},
+  {d:'Jun 18',a:'Mexico',b:'South Korea',g:'A',v:'Estadio Azteca, Mexico City'},
+  {d:'Jun 18',a:'Switzerland',b:'Bosnia & Herzegovina',g:'B',v:'BC Place, Vancouver'},
+  {d:'Jun 18',a:'Canada',b:'Qatar',g:'B',v:'BMO Field, Toronto'},
+  {d:'Jun 19',a:'Scotland',b:'Morocco',g:'C',v:'Lumen Field, Seattle'},
+  {d:'Jun 19',a:'Brazil',b:'Haiti',g:'C',v:'SoFi Stadium, Los Angeles'},
+  {d:'Jun 19',a:'United States',b:'Australia',g:'D',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 19',a:'Turkey',b:'Paraguay',g:'D',v:'BC Place, Vancouver'},
+  {d:'Jun 20',a:'Germany',b:'Ivory Coast',g:'E',v:'Mercedes-Benz Stadium, Atlanta'},
+  {d:'Jun 20',a:'Ecuador',b:'Curaçao',g:'E',v:'Gillette Stadium, Boston'},
+  {d:'Jun 20',a:'Netherlands',b:'Sweden',g:'F',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 20',a:'Tunisia',b:'Japan',g:'F',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 21',a:'Belgium',b:'Iran',g:'G',v:'Arrowhead Stadium, Kansas City'},
+  {d:'Jun 21',a:'New Zealand',b:'Egypt',g:'G',v:'AT&T Stadium, Dallas'},
+  {d:'Jun 21',a:'Spain',b:'Saudi Arabia',g:'H',v:'Arrowhead Stadium, Kansas City'},
+  {d:'Jun 21',a:'Uruguay',b:'Cape Verde',g:'H',v:'AT&T Stadium, Dallas'},
+  {d:'Jun 22',a:'France',b:'Iraq',g:'I',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 22',a:'Norway',b:'Senegal',g:'I',v:'Gillette Stadium, Boston'},
+  {d:'Jun 22',a:'Argentina',b:'Austria',g:'J',v:'MetLife Stadium, New York/NJ'},
+  {d:'Jun 22',a:'Jordan',b:'Algeria',g:'J',v:'Gillette Stadium, Boston'},
+  {d:'Jun 23',a:'Portugal',b:'Uzbekistan',g:'K',v:'Lumen Field, Seattle'},
+  {d:'Jun 23',a:'Colombia',b:'DR Congo',g:'K',v:'BC Place, Vancouver'},
+  {d:'Jun 23',a:'England',b:'Ghana',g:'L',v:'Mercedes-Benz Stadium, Atlanta'},
+  {d:'Jun 23',a:'Panama',b:'Croatia',g:'L',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 24',a:'Czech Republic',b:'Mexico',g:'A',v:'Estadio BBVA, Monterrey'},
+  {d:'Jun 24',a:'South Africa',b:'South Korea',g:'A',v:'Estadio Akron, Guadalajara'},
+  {d:'Jun 24',a:'Switzerland',b:'Canada',g:'B',v:'BC Place, Vancouver'},
+  {d:'Jun 24',a:'Bosnia & Herzegovina',b:'Qatar',g:'B',v:'BMO Field, Toronto'},
+  {d:'Jun 24',a:'Scotland',b:'Brazil',g:'C',v:'Lumen Field, Seattle'},
+  {d:'Jun 24',a:'Morocco',b:'Haiti',g:'C',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 25',a:'Turkey',b:'United States',g:'D',v:'Lumen Field, Seattle'},
+  {d:'Jun 25',a:'Paraguay',b:'Australia',g:'D',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 25',a:'Curaçao',b:'Ivory Coast',g:'E',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 25',a:'Ecuador',b:'Germany',g:'E',v:'Mercedes-Benz Stadium, Atlanta'},
+  {d:'Jun 25',a:'Japan',b:'Sweden',g:'F',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 25',a:'Tunisia',b:'Netherlands',g:'F',v:'Gillette Stadium, Boston'},
+  {d:'Jun 26',a:'Egypt',b:'Iran',g:'G',v:'NRG Stadium, Houston'},
+  {d:'Jun 26',a:'New Zealand',b:'Belgium',g:'G',v:'Arrowhead Stadium, Kansas City'},
+  {d:'Jun 26',a:'Cape Verde',b:'Saudi Arabia',g:'H',v:'NRG Stadium, Houston'},
+  {d:'Jun 26',a:'Uruguay',b:'Spain',g:'H',v:'Arrowhead Stadium, Kansas City'},
+  {d:'Jun 26',a:'Norway',b:'France',g:'I',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 26',a:'Senegal',b:'Iraq',g:'I',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 27',a:'Algeria',b:'Austria',g:'J',v:'Lincoln Financial Field, Philadelphia'},
+  {d:'Jun 27',a:'Jordan',b:'Argentina',g:'J',v:'Hard Rock Stadium, Miami'},
+  {d:'Jun 27',a:'Colombia',b:'Portugal',g:'K',v:'Levi\'s Stadium, San Francisco'},
+  {d:'Jun 27',a:'DR Congo',b:'Uzbekistan',g:'K',v:'SoFi Stadium, Los Angeles'},
+  {d:'Jun 27',a:'Panama',b:'England',g:'L',v:'Gillette Stadium, Boston'},
+  {d:'Jun 27',a:'Croatia',b:'Ghana',g:'L',v:'MetLife Stadium, New York/NJ'}
+];
+
+const ALL_TEAMS = [
+  {nm:'Argentina',flag:'🇦🇷'},{nm:'Australia',flag:'🇦🇺'},{nm:'Austria',flag:'🇦🇹'},
+  {nm:'Belgium',flag:'🇧🇪'},{nm:'Bosnia & Herzegovina',flag:'🇧🇦'},{nm:'Brazil',flag:'🇧🇷'},
+  {nm:'Canada',flag:'🇨🇦',host:true},{nm:'Cape Verde',flag:'🇨🇻',debut:true},{nm:'Colombia',flag:'🇨🇴'},
+  {nm:'Croatia',flag:'🇭🇷'},{nm:'Curaçao',flag:'🇨🇼',debut:true},{nm:'Czech Republic',flag:'🇨🇿'},
+  {nm:'DR Congo',flag:'🇨🇩'},{nm:'Ecuador',flag:'🇪🇨'},{nm:'Egypt',flag:'🇪🇬'},
+  {nm:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},{nm:'France',flag:'🇫🇷'},{nm:'Germany',flag:'🇩🇪'},
+  {nm:'Ghana',flag:'🇬🇭'},{nm:'Haiti',flag:'🇭🇹'},{nm:'Iran',flag:'🇮🇷'},{nm:'Iraq',flag:'🇮🇶'},
+  {nm:'Ivory Coast',flag:'🇨🇮'},{nm:'Japan',flag:'🇯🇵'},{nm:'Jordan',flag:'🇯🇴',debut:true},
+  {nm:'Mexico',flag:'🇲🇽',host:true},{nm:'Morocco',flag:'🇲🇦'},{nm:'Netherlands',flag:'🇳🇱'},
+  {nm:'New Zealand',flag:'🇳🇿'},{nm:'Norway',flag:'🇳🇴'},{nm:'Panama',flag:'🇵🇦'},
+  {nm:'Paraguay',flag:'🇵🇾'},{nm:'Portugal',flag:'🇵🇹'},{nm:'Qatar',flag:'🇶🇦'},
+  {nm:'Saudi Arabia',flag:'🇸🇦'},{nm:'Scotland',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},{nm:'Senegal',flag:'🇸🇳'},
+  {nm:'South Africa',flag:'🇿🇦'},{nm:'South Korea',flag:'🇰🇷'},{nm:'Spain',flag:'🇪🇸'},
+  {nm:'Sweden',flag:'🇸🇪'},{nm:'Switzerland',flag:'🇨🇭'},{nm:'Tunisia',flag:'🇹🇳'},
+  {nm:'Turkey',flag:'🇹🇷'},{nm:'United States',flag:'🇺🇸',host:true},{nm:'Uruguay',flag:'🇺🇾'},
+  {nm:'Uzbekistan',flag:'🇺🇿',debut:true}
+];
+
+const VENUES = [
+  {nm:'AT&T Stadium',city:'Arlington, TX',ct:'USA',cls:'usa',cap:'94,000'},
+  {nm:'Estadio Azteca',city:'Mexico City',ct:'Mexico',cls:'mex',cap:'83,000'},
+  {nm:'MetLife Stadium',city:'East Rutherford, NJ',ct:'USA',cls:'usa',cap:'82,500',note:'🏆 FINAL'},
+  {nm:'Mercedes-Benz Stadium',city:'Atlanta, GA',ct:'USA',cls:'usa',cap:'75,000',note:'Indoor'},
+  {nm:'Arrowhead Stadium',city:'Kansas City, MO',ct:'USA',cls:'usa',cap:'73,000'},
+  {nm:'NRG Stadium',city:'Houston, TX',ct:'USA',cls:'usa',cap:'72,000',note:'Indoor'},
+  {nm:"Levi's Stadium",city:'Santa Clara, CA',ct:'USA',cls:'usa',cap:'71,000'},
+  {nm:'SoFi Stadium',city:'Inglewood, CA',ct:'USA',cls:'usa',cap:'70,000'},
+  {nm:'Lincoln Financial Field',city:'Philadelphia, PA',ct:'USA',cls:'usa',cap:'69,000'},
+  {nm:'Lumen Field',city:'Seattle, WA',ct:'USA',cls:'usa',cap:'69,000'},
+  {nm:'Gillette Stadium',city:'Foxborough, MA',ct:'USA',cls:'usa',cap:'65,000'},
+  {nm:'Hard Rock Stadium',city:'Miami Gardens, FL',ct:'USA',cls:'usa',cap:'65,000'},
+  {nm:'BC Place',city:'Vancouver, BC',ct:'Canada',cls:'can',cap:'54,000',note:'Indoor'},
+  {nm:'Estadio BBVA',city:'Monterrey',ct:'Mexico',cls:'mex',cap:'53,500'},
+  {nm:'Estadio Akron',city:'Guadalajara',ct:'Mexico',cls:'mex',cap:'48,000'},
+  {nm:'BMO Field',city:'Toronto, ON',ct:'Canada',cls:'can',cap:'45,000'}
+];
+
+// ═══════════════════════════════════════════
+// RENDER FUNCTIONS
+// ═══════════════════════════════════════════
+
+// ── Team ID mapping ──
+const TEAM_KEY_MAP = {
+  'Mexico':'mexico','South Africa':'southAfrica','South Korea':'southKorea','Czech Republic':'czechRepublic',
+  'Canada':'canada','Bosnia & Herzegovina':'bosnia','Qatar':'qatar','Switzerland':'switzerland',
+  'Brazil':'brazil','Morocco':'morocco','Haiti':'haiti','Scotland':'scotland',
+  'United States':'usa','Paraguay':'paraguay','Australia':'australia','Turkey':'turkey',
+  'Germany':'germany','Curaçao':'curaçao','Ivory Coast':'ivoryCoast','Ecuador':'ecuador',
+  'Netherlands':'netherlands','Japan':'japan','Sweden':'sweden','Tunisia':'tunisia',
+  'Belgium':'belgium','Egypt':'egypt','Iran':'iran','New Zealand':'newZealand',
+  'Spain':'spain','Cape Verde':'capeVerde','Saudi Arabia':'saudiArabia','Uruguay':'uruguay',
+  'France':'france','Senegal':'senegal','Iraq':'iraq','Norway':'norway',
+  'Argentina':'argentina','Algeria':'algeria','Austria':'austria','Jordan':'jordan',
+  'Portugal':'portugal','DR Congo':'drCongo','Uzbekistan':'uzbekistan','Colombia':'colombia',
+  'England':'england','Croatia':'croatia','Ghana':'ghana','Panama':'panama'
+};
+function getTeamKey(nm) { return TEAM_KEY_MAP[nm]; }
+function getCoach(nm) { const k = getTeamKey(nm); return k ? (COACHES[k] || '—') : '—'; }
+function getSquadStatus(nm) { const k = getTeamKey(nm); return k ? (SQUAD_STATUS[k] || null) : null; }
+
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const el = document.getElementById('page-'+page);
+  if (el) el.classList.add('active');
+  window.scrollTo(0,0);
+}
+function openTeam(nm) {
+  showPage('team');
+  renderTeam(nm);
+}
+function historyBack() { showPage('teams'); }
+
+function renderTeam(nm) {
+  const sk = getSquadKey(nm);
+  const sq = sk ? SQUADS[sk] : null;
+  const coach = getCoach(nm);
+  const status = getSquadStatus(nm);
+  const grp = GROUPS.find(g=>g.teams.some(t=>t.nm===nm));
+  const grpFixtures = ALL_FIXTURES.filter(f=>f.a===nm||f.b===nm);
+  const t = ALL_TEAMS.find(x=>x.nm===nm);
+  const hasSquad = !!sq;
+
+  let html = `<div class="team-detail-header">
+    <div class="team-detail-flag">${t?.flag||'🏳️'}</div>
+    <div>
+      <div class="team-detail-name">${nm}</div>
+      <div class="team-detail-meta">
+        <span>👨‍🏫 ${coach}</span>
+        ${grp ? `<span class="team-detail-group">Group ${grp.letter}</span>` : ''}
+      </div>
+    </div>
+  </div>`;
+
+  if (hasSquad) {
+    html += `<div class="squad-status confirmed">✅ 最終名單已確認 · ${sq.announced} 宣布 · 26 人</div>`;
+    html += `<div class="squad-section"><h3><span class="pos-tag gk">🧤</span> 守門員</h3><div class="squad-grid">`;
+    sq.gk.forEach((p,i)=>html+=`<div class="player-card"><span class="player-num">#${i+1}</span><span class="player-name">${p.n}${p.j?` <span class="player-kanji">${p.j}</span>`:''}${p.h?` <span class="player-kanji">${p.h}</span>`:''}</span><span class="player-club">${p.c}</span></div>`);
+    html+=`</div></div>`;
+    html += `<div class="squad-section"><h3><span class="pos-tag def">🛡️</span> 後衛</h3><div class="squad-grid">`;
+    sq.def.forEach((p,i)=>html+=`<div class="player-card"><span class="player-num">#${(sq.gk.length)+(i+1)}</span><span class="player-name">${p.n}${p.j?` <span class="player-kanji">${p.j}</span>`:''}${p.h?` <span class="player-kanji">${p.h}</span>`:''}</span><span class="player-club">${p.c}</span></div>`);
+    html+=`</div></div>`;
+    html += `<div class="squad-section"><h3><span class="pos-tag mid">⚡</span> 中場</h3><div class="squad-grid">`;
+    sq.mid.forEach((p,i)=>html+=`<div class="player-card"><span class="player-num">#${(sq.gk.length)+(sq.def.length)+(i+1)}</span><span class="player-name">${p.n}${p.j?` <span class="player-kanji">${p.j}</span>`:''}${p.h?` <span class="player-kanji">${p.h}</span>`:''}</span><span class="player-club">${p.c}</span></div>`);
+    html+=`</div></div>`;
+    html += `<div class="squad-section"><h3><span class="pos-tag fwd">⚽</span> 前鋒</h3><div class="squad-grid">`;
+    sq.fwd.forEach((p,i)=>html+=`<div class="player-card"><span class="player-num">#${(sq.gk.length)+(sq.def.length)+(sq.mid.length)+(i+1)}</span><span class="player-name">${p.n}${p.j?` <span class="player-kanji">${p.j}</span>`:''}${p.h?` <span class="player-kanji">${p.h}</span>`:''}</span><span class="player-club">${p.c}</span></div>`);
+    html+=`</div></div>`;
+  } else {
+    const st = status || '⏳ 待宣布';
+    html += `<div class="squad-status pending">${st}</div>`;
+  }
+
+  if (grpFixtures.length) {
+    html += `<div class="squad-section"><h3>📅 ${nm} 嘅賽程</h3><div class="fixtures-list">`;
+    grpFixtures.forEach(f=>{
+      html+=`<div class="fixture-card">
+        <span class="fixture-date">${f.d}</span>
+        <div class="fixture-teams">
+          <span class="fixture-team">${f.a}</span><span class="fixture-vs">vs</span><span class="fixture-team">${f.b}</span>
+        </div>
+        <div class="fixture-info"><span class="fixture-round">Group ${f.g}</span><span>${f.v}</span></div>
+      </div>`;
+    });
+    html+=`</div></div>`;
+  }
+
+  document.getElementById('teamDetailContent').innerHTML = html;
+}
+
+function filterFixtures(g) {
+  document.querySelectorAll('#fixtureFilter .filter-tab').forEach(t=>t.classList.toggle('active',t.dataset.group===g));
+  const fc = document.getElementById('fixturesContainer');
+  fc.innerHTML = ALL_FIXTURES.filter(f=>g==='all'||f.g===g).map(f=>`
+    <div class="fixture-card">
+      <span class="fixture-date">${f.d}</span>
+      <div class="fixture-teams">
+        <span class="fixture-team" onclick="openTeam('${f.a}')">${f.a}</span>
+        <span class="fixture-vs">vs</span>
+        <span class="fixture-team" onclick="openTeam('${f.b}')">${f.b}</span>
+      </div>
+      <div class="fixture-info">
+        <span class="fixture-round">Group ${f.g}</span>
+        <span>${f.v}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── RENDER ALL ──
+
+// Groups
+document.getElementById('groupsContainer').innerHTML = GROUPS.map(g=>`
+  <div class="group-card">
+    <div class="group-header">Group ${g.letter}</div>
+    ${g.teams.map(t=>`
+      <div class="team-row" onclick="openTeam('${t.nm}')">
+        <span class="team-flag">${t.flag}</span>
+        <span class="team-name">${t.nm}${t.host?'<span class="team-badge host">HOST</span>':''}${t.debut?'<span class="team-badge debut">DEBUT</span>':''}</span>
+        <span style="font-size:0.75rem;color:var(--text2);">${getSquadKey(t.nm)?'✅':'⏳'}</span>
+      </div>
+    `).join('')}
+    <div class="team-mini-fixtures">
+      ${ALL_FIXTURES.filter(f=>f.g===g.letter).map(f=>`<span>${f.a.slice(0,12)} vs ${f.b.slice(0,12)}</span>`).join('')}
+    </div>
+  </div>
+`).join('');
+
+// Fixtures
+filterFixtures('all');
+
+// Teams
+const tc = document.getElementById('teamsContainer');
+ALL_TEAMS.sort((a,b)=>a.nm.localeCompare(b.nm));
+tc.innerHTML = ALL_TEAMS.map(t=>`
+  <span class="team-tag${t.debut?' debut':''}" onclick="openTeam('${t.nm}')">
+    ${t.flag} ${t.nm}${t.debut?'<span class="debut-tag">NEW</span>':''}
+  </span>
+`).join('');
+
+// Venues
+document.getElementById('venuesContainer').innerHTML = VENUES.map(v=>`
+  <div class="venue-card">
+    <h4>${v.nm}</h4>
+    <div class="venue-city">📍 ${v.city}</div>
+    <div class="venue-cap">👥 ${v.cap}</div>
+    ${v.note?`<div style="font-size:0.75rem;color:var(--gold);margin-top:0.25rem;">${v.note}</div>`:''}
+    <span class="venue-country ${v.cls}">${v.ct}</span>
+  </div>
+`).join('');
+
+// Knockout
+const KOROUNDS = [
+  {nm:'Round of 32',dt:'Jun 28 – Jul 3',v:'16 venues'},{nm:'Round of 16',dt:'Jul 4 – 7',v:'8 venues'},
+  {nm:'Quarter-finals',dt:'Jul 9 – 11',v:'4 venues'},{nm:'Semi-finals',dt:'Jul 14 – 15',v:'AT&T / MBS'},
+  {nm:'3rd Place',dt:'Jul 18',v:'Hard Rock Stadium, Miami'},
+  {nm:'🏆 FINAL',dt:'Jul 19',v:'MetLife Stadium, New York/NJ'}
+];
+document.getElementById('koContainer').innerHTML = KOROUNDS.map(r=>`
+  <div class="ko-round${r.nm.includes('FINAL')?' final':''}">
+    <h4>${r.nm}</h4><p>${r.dt}</p><div class="ko-venue">${r.v}</div>
+  </div>
+`).join('');
+
+// Team dropdown nav
+document.getElementById('teamDropdown').innerHTML = ALL_TEAMS.sort((a,b)=>a.nm.localeCompare(b.nm)).map(t=>
+  `<a onclick="openTeam('${t.nm}')">${t.flag} ${t.nm} ${getSquadKey(t.nm)?'✅':'⏳'}</a>`
+).join('');
+</script>
+</body>
+</html>
