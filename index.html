@@ -481,8 +481,8 @@ function init(){
 
 function updateTime(){
   let t=META.updated?META.updated.replace('T',' ').slice(0,16):'—';
-  document.getElementById('updbadge').textContent=t.slice(5,16);
-  document.getElementById('ftupd').textContent=t;
+  let ft=document.getElementById('ftupd');
+  if(ft)ft.textContent=t;
 }
 
 // ── Groups ──
