@@ -22,11 +22,12 @@ a{color:var(--gold);text-decoration:none}
 .nav a:hover,.nav-link:hover{color:var(--gold);background:rgba(201,149,14,.08)}
 .nav-brand{font-weight:800;color:var(--gold)!important;margin-right:.15rem;font-size:.85rem}
 .nav-teams{position:relative}
-.nav-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--border);border-radius:12px;max-height:60vh;overflow-y:auto;min-width:260px;z-index:9999;padding:.4rem;box-shadow:0 8px 40px rgba(0,0,0,.25)}
-.nav-teams:hover .nav-drop,.nav-drop:hover{display:block}
+.nav-drop{display:none;position:fixed;top:56px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--border);border-radius:12px;max-height:60vh;overflow-y:auto;min-width:280px;z-index:9999;padding:.4rem;box-shadow:0 8px 40px rgba(0,0,0,.25)}
+.nav-drop.open{display:block}
 .nav-drop a{display:flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:6px;font-size:.72rem;color:var(--text);white-space:nowrap}
 .nav-drop a:hover{background:var(--surface2)}
-.nav-overlay{position:fixed;top:54px;left:0;right:0;bottom:0;background:transparent;z-index:999;pointer-events:none}
+.nav-overlay{position:fixed;top:54px;left:0;right:0;bottom:0;z-index:9998;display:none;background:transparent}
+.nav-overlay.open{display:block}
 .srch-wrap{position:relative;display:flex;align-items:center}
 .srch-inp{background:var(--surface2);border:1px solid transparent;border-radius:100px;padding:.28rem .5rem .28rem 1.5rem;font-size:.72rem;outline:none;width:90px;transition:all .2s;font-family:inherit;color:var(--text)}
 .srch-inp:focus{width:150px;border-color:var(--gold);background:var(--surface)}
@@ -241,12 +242,12 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.75rem;border
 <body>
 
 <nav class="nav">
-  <div class="nav-scroll">
+  <div class="nav-scroll" id="navscroll">
     <a class="nav-brand">🏆'26</a>
     <a onclick="show('home')">分組</a>
     <a onclick="show('fixtures')">賽程</a>
     <a onclick="show('teams')">球隊</a>
-    <span class="nav-link nav-teams">名單 ▾<div class="nav-drop" id="drop"></div></span>
+    <a class="nav-link" id="dropTrigger" onclick="toggleDrop()">名單 ▾</a>
     <a onclick="show('venues')">場地</a>
     <a onclick="show('ko')">淘汰賽</a>
   </div>
@@ -259,7 +260,8 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.75rem;border
   </div>
 </nav>
 
-<div class="nav-overlay" id="navov"></div>
+<div class="nav-drop" id="drop"></div>
+<div class="nav-overlay" id="dropOverlay" onclick="closeDrop()"></div>
 
 <div class="page" id="phome">
   <div class="loading" id="phomeload"><div class="spinner"></div><p>載入中...</p></div>
@@ -426,8 +428,25 @@ function show(p){
   let e=document.getElementById('p'+p);
   if(e){e.classList.add('active');window.scrollTo(0,0)}
 }
-function openTeam(nm){show('team');renderTeamDetail(nm)}
-function backT(){show('teams')}
+function openTeam(nm){show('team');renderTeamDetail(nm);closeDrop()}
+function backT(){show('teams');closeDrop()}
+function toggleDrop(){
+  let d=document.getElementById('drop');
+  let o=document.getElementById('dropOverlay');
+  if(d.classList.contains('open')){closeDrop()}else{openDrop()}
+}
+function openDrop(){
+  let d=document.getElementById('drop');
+  let o=document.getElementById('dropOverlay');
+  d.classList.add('open');o.classList.add('open');
+  // Position the dropdown close to the trigger
+  var trig=document.getElementById('dropTrigger');
+  if(trig){var r=trig.getBoundingClientRect();d.style.left=r.left+r.width/2+'px';d.style.transform='translateX(-50%)'}
+}
+function closeDrop(){
+  document.getElementById('drop').classList.remove('open');
+  document.getElementById('dropOverlay').classList.remove('open');
+}
 
 function openSearch(){document.getElementById('srchov').classList.add('open');document.getElementById('srchpnl').classList.add('open')}
 function closeSearch(){document.getElementById('srchov').classList.remove('open');document.getElementById('srchpnl').classList.remove('open');document.getElementById('srchpnl').innerHTML=''}
