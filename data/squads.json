@@ -1,0 +1,1243 @@
+{
+  "meta": {
+    "updated": "2026-05-24T15:30:00+08:00"
+  },
+  "squads": {
+    "brazil": {
+      "coach": "Carlo Ancelotti",
+      "announced": "May 18",
+      "gk": [
+        {
+          "n": "Alisson",
+          "c": "Liverpool",
+          "s": 1
+        },
+        {
+          "n": "Ederson",
+          "c": "Fenerbahçe",
+          "s": 1
+        },
+        {
+          "n": "Weverton",
+          "c": "Grêmio"
+        }
+      ],
+      "def": [
+        {
+          "n": "Marquinhos",
+          "c": "PSG",
+          "s": 1
+        },
+        {
+          "n": "Danilo",
+          "c": "Flamengo"
+        },
+        {
+          "n": "Alex Sandro",
+          "c": "Flamengo"
+        },
+        {
+          "n": "Gabriel Magalhães",
+          "c": "Arsenal",
+          "s": 1
+        },
+        {
+          "n": "Bremer",
+          "c": "Juventus"
+        },
+        {
+          "n": "Wesley",
+          "c": "Roma"
+        },
+        {
+          "n": "Roger Ibañez",
+          "c": "Al-Ahli"
+        },
+        {
+          "n": "Douglas Santos",
+          "c": "Zenit"
+        },
+        {
+          "n": "Léo Pereira",
+          "c": "Flamengo"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Casemiro",
+          "c": "Man Utd",
+          "s": 1
+        },
+        {
+          "n": "Lucas Paquetá",
+          "c": "Flamengo"
+        },
+        {
+          "n": "Bruno Guimarães",
+          "c": "Newcastle"
+        },
+        {
+          "n": "Fabinho",
+          "c": "Al-Ittihad"
+        },
+        {
+          "n": "Danilo Santos",
+          "c": "Botafogo"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Neymar",
+          "c": "Santos",
+          "s": 1
+        },
+        {
+          "n": "Vinícius Jr",
+          "c": "Real Madrid",
+          "s": 1
+        },
+        {
+          "n": "Raphinha",
+          "c": "Barcelona",
+          "s": 1
+        },
+        {
+          "n": "Gabriel Martinelli",
+          "c": "Arsenal"
+        },
+        {
+          "n": "Matheus Cunha",
+          "c": "Man Utd"
+        },
+        {
+          "n": "Endrick",
+          "c": "Lyon"
+        },
+        {
+          "n": "Luiz Henrique",
+          "c": "Zenit"
+        },
+        {
+          "n": "Igor Thiago",
+          "c": "Brentford"
+        },
+        {
+          "n": "Rayan",
+          "c": "Bournemouth"
+        }
+      ]
+    },
+    "france": {
+      "coach": "Didier Deschamps",
+      "announced": "May 14",
+      "gk": [
+        {
+          "n": "Maignan",
+          "c": "Milan",
+          "s": 1
+        },
+        {
+          "n": "Samba",
+          "c": "Rennes"
+        },
+        {
+          "n": "Risser",
+          "c": "Lens"
+        }
+      ],
+      "def": [
+        {
+          "n": "Digne",
+          "c": "Aston Villa"
+        },
+        {
+          "n": "Koundé",
+          "c": "Barcelona",
+          "s": 1
+        },
+        {
+          "n": "T.Hernandez",
+          "c": "Al-Hilal",
+          "s": 1
+        },
+        {
+          "n": "L.Hernandez",
+          "c": "PSG"
+        },
+        {
+          "n": "Upamecano",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Saliba",
+          "c": "Arsenal",
+          "s": 1
+        },
+        {
+          "n": "Konaté",
+          "c": "Liverpool"
+        },
+        {
+          "n": "Gusto",
+          "c": "Chelsea"
+        },
+        {
+          "n": "Lacroix",
+          "c": "Crystal Palace"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Kanté",
+          "c": "Fenerbahçe"
+        },
+        {
+          "n": "Rabiot",
+          "c": "Milan"
+        },
+        {
+          "n": "Tchouaméni",
+          "c": "Real Madrid",
+          "s": 1
+        },
+        {
+          "n": "Koné",
+          "c": "Roma"
+        },
+        {
+          "n": "Zaïre-Emery",
+          "c": "PSG"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Mbappé",
+          "c": "Real Madrid",
+          "s": 1
+        },
+        {
+          "n": "Dembélé",
+          "c": "PSG",
+          "s": 1
+        },
+        {
+          "n": "Thuram",
+          "c": "Inter"
+        },
+        {
+          "n": "Barcola",
+          "c": "PSG"
+        },
+        {
+          "n": "Olise",
+          "c": "Bayern"
+        },
+        {
+          "n": "Akliouche",
+          "c": "Monaco"
+        },
+        {
+          "n": "Doué",
+          "c": "PSG"
+        },
+        {
+          "n": "Cherki",
+          "c": "Man City"
+        },
+        {
+          "n": "Mateta",
+          "c": "Crystal Palace"
+        }
+      ]
+    },
+    "portugal": {
+      "coach": "Roberto Martínez",
+      "announced": "May 19",
+      "gk": [
+        {
+          "n": "D.Costa",
+          "c": "Porto",
+          "s": 1
+        },
+        {
+          "n": "Sá",
+          "c": "Wolves"
+        },
+        {
+          "n": "Silva",
+          "c": "Sporting CP"
+        }
+      ],
+      "def": [
+        {
+          "n": "Dias",
+          "c": "Man City",
+          "s": 1
+        },
+        {
+          "n": "Cancelo",
+          "c": "Barcelona",
+          "s": 1
+        },
+        {
+          "n": "Semedo",
+          "c": "Fenerbahçe"
+        },
+        {
+          "n": "N.Mendes",
+          "c": "PSG"
+        },
+        {
+          "n": "Dalot",
+          "c": "Man Utd"
+        },
+        {
+          "n": "Inácio",
+          "c": "Sporting CP"
+        },
+        {
+          "n": "M.Nunes",
+          "c": "Man City"
+        },
+        {
+          "n": "Veiga",
+          "c": "Villarreal"
+        },
+        {
+          "n": "Araújo",
+          "c": "Benfica"
+        }
+      ],
+      "mid": [
+        {
+          "n": "B.Silva",
+          "c": "Man City",
+          "s": 1
+        },
+        {
+          "n": "B.Fernandes",
+          "c": "Man Utd",
+          "s": 1
+        },
+        {
+          "n": "Neves",
+          "c": "Al-Hilal"
+        },
+        {
+          "n": "Vitinha",
+          "c": "PSG"
+        },
+        {
+          "n": "J.Neves",
+          "c": "PSG"
+        },
+        {
+          "n": "Costa",
+          "c": "Mallorca"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Ronaldo",
+          "c": "Al-Nassr",
+          "s": 1
+        },
+        {
+          "n": "Félix",
+          "c": "Al-Nassr"
+        },
+        {
+          "n": "Leão",
+          "c": "Milan"
+        },
+        {
+          "n": "Guedes",
+          "c": "Real Sociedad"
+        },
+        {
+          "n": "Ramos",
+          "c": "PSG"
+        },
+        {
+          "n": "Neto",
+          "c": "Chelsea"
+        },
+        {
+          "n": "Trincão",
+          "c": "Sporting CP"
+        },
+        {
+          "n": "Conceição",
+          "c": "Juventus"
+        }
+      ]
+    },
+    "croatia": {
+      "coach": "Zlatko Dalić",
+      "announced": "May 18",
+      "gk": [
+        {
+          "n": "Livaković",
+          "c": "Dinamo Zagreb",
+          "s": 1
+        },
+        {
+          "n": "Kotarski",
+          "c": "Copenhagen"
+        },
+        {
+          "n": "Pandur",
+          "c": "Hull City"
+        }
+      ],
+      "def": [
+        {
+          "n": "Gvardiol",
+          "c": "Man City",
+          "s": 1
+        },
+        {
+          "n": "Ćaleta-Car",
+          "c": "Real Sociedad"
+        },
+        {
+          "n": "Šutalo",
+          "c": "Ajax"
+        },
+        {
+          "n": "Stanišić",
+          "c": "Bayern"
+        },
+        {
+          "n": "Pongračić",
+          "c": "Fiorentina"
+        },
+        {
+          "n": "Erlić",
+          "c": "Midtjylland"
+        },
+        {
+          "n": "Vušković",
+          "c": "Hamburger SV"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Modrić",
+          "c": "Milan",
+          "s": 1
+        },
+        {
+          "n": "Kovačić",
+          "c": "Man City",
+          "s": 1
+        },
+        {
+          "n": "Pašalić",
+          "c": "Atalanta"
+        },
+        {
+          "n": "Vlašić",
+          "c": "Torino"
+        },
+        {
+          "n": "Sučić",
+          "c": "Real Sociedad"
+        },
+        {
+          "n": "Baturina",
+          "c": "Como"
+        },
+        {
+          "n": "Jakić",
+          "c": "Augsburg"
+        },
+        {
+          "n": "P.Sučić",
+          "c": "Inter"
+        },
+        {
+          "n": "Moro",
+          "c": "Bologna"
+        },
+        {
+          "n": "Fruk",
+          "c": "Rijeka"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Perišić",
+          "c": "PSV",
+          "s": 1
+        },
+        {
+          "n": "Kramarić",
+          "c": "Hoffenheim"
+        },
+        {
+          "n": "Budimir",
+          "c": "Osasuna"
+        },
+        {
+          "n": "M.Pašalić",
+          "c": "Orlando City"
+        },
+        {
+          "n": "Musa",
+          "c": "FC Dallas"
+        },
+        {
+          "n": "Matanović",
+          "c": "Freiburg"
+        }
+      ]
+    },
+    "germany": {
+      "coach": "Nagelsmann",
+      "announced": "May 21",
+      "gk": [
+        {
+          "n": "Neuer",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Baumann",
+          "c": "Hoffenheim"
+        },
+        {
+          "n": "Nübel",
+          "c": "Stuttgart"
+        }
+      ],
+      "def": [
+        {
+          "n": "Rüdiger",
+          "c": "Real Madrid",
+          "s": 1
+        },
+        {
+          "n": "Tah",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Raum",
+          "c": "RB Leipzig"
+        },
+        {
+          "n": "Schlotterbeck",
+          "c": "Dortmund"
+        },
+        {
+          "n": "Anton",
+          "c": "Dortmund"
+        },
+        {
+          "n": "Thiaw",
+          "c": "Newcastle"
+        },
+        {
+          "n": "Brown",
+          "c": "Eintracht Frankfurt"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Kimmich",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Sané",
+          "c": "Galatasaray"
+        },
+        {
+          "n": "Goretzka",
+          "c": "Bayern"
+        },
+        {
+          "n": "Musiala",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Wirtz",
+          "c": "Liverpool",
+          "s": 1
+        },
+        {
+          "n": "Groß",
+          "c": "Brighton"
+        },
+        {
+          "n": "Amiri",
+          "c": "Mainz"
+        },
+        {
+          "n": "Pavlović",
+          "c": "Bayern"
+        },
+        {
+          "n": "Stiller",
+          "c": "Stuttgart"
+        },
+        {
+          "n": "Nmecha",
+          "c": "Dortmund"
+        },
+        {
+          "n": "Leweling",
+          "c": "Stuttgart"
+        },
+        {
+          "n": "Karl",
+          "c": "Bayern"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Havertz",
+          "c": "Arsenal",
+          "s": 1
+        },
+        {
+          "n": "Woltemade",
+          "c": "Newcastle"
+        },
+        {
+          "n": "Undav",
+          "c": "Stuttgart"
+        },
+        {
+          "n": "Beier",
+          "c": "Dortmund"
+        }
+      ]
+    },
+    "japan": {
+      "coach": "森保一 (Moriyasu)",
+      "announced": "May 15",
+      "gk": [
+        {
+          "n": "Suzuki",
+          "j": "鈴木彩艶",
+          "c": "Parma"
+        },
+        {
+          "n": "Ōsako",
+          "j": "大迫敬介",
+          "c": "Sanfrecce Hiroshima"
+        },
+        {
+          "n": "Hayakawa",
+          "j": "早川友基",
+          "c": "Kashima Antlers"
+        }
+      ],
+      "def": [
+        {
+          "n": "Nagatomo",
+          "j": "長友佑都",
+          "c": "FC Tokyo"
+        },
+        {
+          "n": "Tomiyasu",
+          "j": "冨安健洋",
+          "c": "Ajax",
+          "s": 1
+        },
+        {
+          "n": "Itakura",
+          "j": "板倉滉",
+          "c": "Ajax"
+        },
+        {
+          "n": "Taniguchi",
+          "j": "谷口彰悟",
+          "c": "Sint-Truiden"
+        },
+        {
+          "n": "Itō",
+          "j": "伊藤洋輝",
+          "c": "Bayern"
+        },
+        {
+          "n": "Sugawara",
+          "j": "菅原由勢",
+          "c": "Werder Bremen"
+        },
+        {
+          "n": "Seko",
+          "j": "瀬古歩夢",
+          "c": "Le Havre"
+        },
+        {
+          "n": "Watanabe",
+          "j": "渡邊剛",
+          "c": "Feyenoord"
+        },
+        {
+          "n": "J.Suzuki",
+          "j": "鈴木準之介",
+          "c": "Copenhagen"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Endo",
+          "j": "遠藤航",
+          "c": "Liverpool",
+          "s": 1
+        },
+        {
+          "n": "Itō",
+          "j": "伊東純也",
+          "c": "Genk"
+        },
+        {
+          "n": "Dōan",
+          "j": "堂安律",
+          "c": "Eintracht Frankfurt"
+        },
+        {
+          "n": "Kamada",
+          "j": "鎌田大地",
+          "c": "Crystal Palace"
+        },
+        {
+          "n": "Kubo",
+          "j": "久保建英",
+          "c": "Real Sociedad",
+          "s": 1
+        },
+        {
+          "n": "Tanaka",
+          "j": "田中碧",
+          "c": "Leeds"
+        },
+        {
+          "n": "Nakamura",
+          "j": "中村敬斗",
+          "c": "Reims"
+        },
+        {
+          "n": "Sano",
+          "j": "佐野海舟",
+          "c": "Mainz"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Ueda",
+          "j": "上田綺世",
+          "c": "Feyenoord"
+        },
+        {
+          "n": "Maeda",
+          "j": "前田大然",
+          "c": "Celtic"
+        },
+        {
+          "n": "Ogawa",
+          "j": "小川航基",
+          "c": "NEC"
+        },
+        {
+          "n": "Y.Suzuki",
+          "j": "鈴木唯人",
+          "c": "Freiburg"
+        },
+        {
+          "n": "Gotō",
+          "j": "後藤啓介",
+          "c": "Sint-Truiden"
+        },
+        {
+          "n": "Shiogai",
+          "j": "潮貝健斗",
+          "c": "Wolfsburg"
+        }
+      ]
+    },
+    "southKorea": {
+      "coach": "Hong Myung-bo",
+      "announced": "May 16",
+      "gk": [
+        {
+          "n": "Kim Seung-gyu",
+          "h": "金承奎",
+          "c": "FC Tokyo"
+        },
+        {
+          "n": "Jo Hyeon-woo",
+          "h": "趙賢祐",
+          "c": "Ulsan HD"
+        },
+        {
+          "n": "Song Bum-keun",
+          "h": "宋範根",
+          "c": "Jeonbuk"
+        }
+      ],
+      "def": [
+        {
+          "n": "Kim Min-jae",
+          "h": "金玟哉",
+          "c": "Bayern",
+          "s": 1
+        },
+        {
+          "n": "Kim Moon-hwan",
+          "h": "金紋煥",
+          "c": "Daejeon"
+        },
+        {
+          "n": "Seol Young-woo",
+          "h": "薛英佑",
+          "c": "Red Star"
+        },
+        {
+          "n": "Cho Yu-min",
+          "h": "曺侑珉",
+          "c": "Sharjah"
+        },
+        {
+          "n": "Lee Tae-seok",
+          "h": "李太錫",
+          "c": "Austria Wien"
+        },
+        {
+          "n": "Park Jin-seob",
+          "h": "朴鎭燮",
+          "c": "Zhejiang"
+        },
+        {
+          "n": "Kim Tae-hyeon",
+          "h": "金泰鉉",
+          "c": "Kashima"
+        },
+        {
+          "n": "Lee Han-beom",
+          "h": "李漢範",
+          "c": "Midtjylland"
+        },
+        {
+          "n": "Castrop",
+          "h": "延斯",
+          "c": "M'gladbach"
+        },
+        {
+          "n": "Lee Ki-hyuk",
+          "h": "李基赫",
+          "c": "Gangwon"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Lee Jae-sung",
+          "h": "李在城",
+          "c": "Mainz"
+        },
+        {
+          "n": "Hwang Hee-chan",
+          "h": "黃喜燦",
+          "c": "Wolves",
+          "s": 1
+        },
+        {
+          "n": "Hwang In-beom",
+          "h": "黃仁範",
+          "c": "Feyenoord"
+        },
+        {
+          "n": "Lee Kang-in",
+          "h": "李剛仁",
+          "c": "PSG",
+          "s": 1
+        },
+        {
+          "n": "Paik Seung-ho",
+          "h": "白昇浩",
+          "c": "Birmingham"
+        },
+        {
+          "n": "Kim Jin-gyu",
+          "h": "金鎭圭",
+          "c": "Jeonbuk"
+        },
+        {
+          "n": "Lee Dong-gyeong",
+          "h": "李東炅",
+          "c": "Ulsan HD"
+        },
+        {
+          "n": "Bae Jun-ho",
+          "h": "裵俊鎬",
+          "c": "Stoke"
+        },
+        {
+          "n": "Eom Ji-sung",
+          "h": "嚴智星",
+          "c": "Swansea"
+        },
+        {
+          "n": "Yang Hyun-jun",
+          "h": "楊賢俊",
+          "c": "Celtic"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Son Heung-min",
+          "h": "孫興慜",
+          "c": "LAFC",
+          "s": 1
+        },
+        {
+          "n": "Cho Gue-sung",
+          "h": "曺圭成",
+          "c": "Midtjylland"
+        },
+        {
+          "n": "Oh Hyeon-gyu",
+          "h": "吳賢揆",
+          "c": "Beşiktaş"
+        }
+      ]
+    },
+    "switzerland": {
+      "coach": "Yakin",
+      "announced": "May 20",
+      "gk": [
+        {
+          "n": "Kobel",
+          "c": "Dortmund",
+          "s": 1
+        },
+        {
+          "n": "Mvogo",
+          "c": "Lorient"
+        },
+        {
+          "n": "Keller",
+          "c": "Young Boys"
+        }
+      ],
+      "def": [
+        {
+          "n": "Rodriguez",
+          "c": "Real Betis",
+          "s": 1
+        },
+        {
+          "n": "Akanji",
+          "c": "Inter",
+          "s": 1
+        },
+        {
+          "n": "Elvedi",
+          "c": "M'gladbach"
+        },
+        {
+          "n": "Widmer",
+          "c": "Mainz"
+        },
+        {
+          "n": "Cömert",
+          "c": "Valencia"
+        },
+        {
+          "n": "Muheim",
+          "c": "Hamburg"
+        },
+        {
+          "n": "Amenda",
+          "c": "Eintracht"
+        },
+        {
+          "n": "Jaquez",
+          "c": "Stuttgart"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Xhaka",
+          "c": "Sunderland",
+          "s": 1
+        },
+        {
+          "n": "Freuler",
+          "c": "Bologna"
+        },
+        {
+          "n": "Zakaria",
+          "c": "Monaco"
+        },
+        {
+          "n": "Sow",
+          "c": "Sevilla"
+        },
+        {
+          "n": "Aebischer",
+          "c": "Pisa"
+        },
+        {
+          "n": "Rieder",
+          "c": "Augsburg"
+        },
+        {
+          "n": "Fassnacht",
+          "c": "Young Boys"
+        },
+        {
+          "n": "Manzambi",
+          "c": "Freiburg"
+        },
+        {
+          "n": "Jashari",
+          "c": "Milan"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Embolo",
+          "c": "Rennes",
+          "s": 1
+        },
+        {
+          "n": "Vargas",
+          "c": "Sevilla"
+        },
+        {
+          "n": "Ndoye",
+          "c": "Nottingham"
+        },
+        {
+          "n": "Amdouni",
+          "c": "Burnley"
+        },
+        {
+          "n": "Okafor",
+          "c": "Leeds"
+        },
+        {
+          "n": "Itten",
+          "c": "Düsseldorf"
+        }
+      ]
+    },
+    "belgium": {
+      "coach": "Rudi Garcia",
+      "announced": "May 15",
+      "gk": [
+        {
+          "n": "Courtois",
+          "c": "Real Madrid",
+          "s": 1
+        },
+        {
+          "n": "Lammens",
+          "c": "Man Utd"
+        },
+        {
+          "n": "Penders",
+          "c": "Strasbourg"
+        }
+      ],
+      "def": [
+        {
+          "n": "Meunier",
+          "c": "Lille"
+        },
+        {
+          "n": "Castagne",
+          "c": "Fulham"
+        },
+        {
+          "n": "Theate",
+          "c": "Eintracht"
+        },
+        {
+          "n": "Debast",
+          "c": "Sporting CP"
+        },
+        {
+          "n": "De Cuyper",
+          "c": "Brighton"
+        },
+        {
+          "n": "Mechele",
+          "c": "Club Brugge"
+        },
+        {
+          "n": "De Winter",
+          "c": "Milan"
+        },
+        {
+          "n": "Seys",
+          "c": "Club Brugge"
+        },
+        {
+          "n": "Ngoy",
+          "c": "Lille"
+        }
+      ],
+      "mid": [
+        {
+          "n": "Witsel",
+          "c": "Girona"
+        },
+        {
+          "n": "De Bruyne",
+          "c": "Napoli",
+          "s": 1
+        },
+        {
+          "n": "Tielemans",
+          "c": "Aston Villa"
+        },
+        {
+          "n": "Vanaken",
+          "c": "Club Brugge"
+        },
+        {
+          "n": "Onana",
+          "c": "Aston Villa"
+        },
+        {
+          "n": "Raskin",
+          "c": "Rangers"
+        }
+      ],
+      "fwd": [
+        {
+          "n": "Lukaku",
+          "c": "Napoli",
+          "s": 1
+        },
+        {
+          "n": "Trossard",
+          "c": "Arsenal"
+        },
+        {
+          "n": "Doku",
+          "c": "Man City"
+        },
+        {
+          "n": "Lukébakio",
+          "c": "Benfica"
+        },
+        {
+          "n": "De Ketelaere",
+          "c": "Atalanta"
+        },
+        {
+          "n": "Saelemaekers",
+          "c": "Milan"
+        },
+        {
+          "n": "Moreira",
+          "c": "Strasbourg"
+        },
+        {
+          "n": "Fernandez-Pardo",
+          "c": "Lille"
+        }
+      ]
+    }
+  },
+  "coaches": {
+    "mexico": "J.Aguirre",
+    "southAfrica": "H.Broos",
+    "southKorea": "Hong M-b",
+    "czechRepublic": "Koubek",
+    "canada": "J.Marsch",
+    "bosnia": "Barbarez",
+    "qatar": "Lopetegui",
+    "switzerland": "Yakin",
+    "usa": "Pochettino",
+    "paraguay": "Alfaro",
+    "australia": "Popovic",
+    "turkey": "Montella",
+    "brazil": "Ancelotti",
+    "morocco": "Ouahbi",
+    "haiti": "Migné",
+    "scotland": "S.Clarke",
+    "netherlands": "Koeman",
+    "japan": "森保一 (Moriyasu)",
+    "sweden": "G.Potter",
+    "tunisia": "Lamouchi",
+    "germany": "Nagelsmann",
+    "curaçao": "Advocaat",
+    "ivoryCoast": "Faé",
+    "ecuador": "Beccacece",
+    "belgium": "R.Garcia",
+    "egypt": "H.Hassan",
+    "iran": "Ghalenoei",
+    "newZealand": "Bazeley",
+    "spain": "L.de la Fuente",
+    "capeVerde": "Bubista",
+    "saudiArabia": "Donis",
+    "uruguay": "Bielsa",
+    "france": "Deschamps",
+    "senegal": "Thiaw",
+    "iraq": "G.Arnold",
+    "norway": "Solbakken",
+    "argentina": "Scaloni",
+    "algeria": "Petković",
+    "austria": "Rangnick",
+    "jordan": "Sellami",
+    "portugal": "R.Martínez",
+    "drCongo": "Desabre",
+    "uzbekistan": "Cannavaro",
+    "colombia": "Lorenzo",
+    "england": "Tuchel",
+    "croatia": "Dalić",
+    "ghana": "Queiroz",
+    "panama": "Christiansen"
+  },
+  "status": {
+    "mexico": "⏳ Jun 1",
+    "southAfrica": "⏳ May 27",
+    "czechRepublic": "⏳ May 31",
+    "canada": "⏳ May 29",
+    "qatar": "⏳ TBD",
+    "australia": "⏳ Jun 1",
+    "paraguay": "⏳ TBD",
+    "turkey": "⏳ TBD",
+    "morocco": "⏳ May 26",
+    "netherlands": "⏳ May 27",
+    "ecuador": "⏳ Jun 1",
+    "egypt": "⏳ May 29",
+    "iran": "⏳ Jun 1",
+    "senegal": "⏳ TBD",
+    "iraq": "⏳ Jun 1",
+    "norway": "⏳ TBD",
+    "spain": "⏳ May 25",
+    "saudiArabia": "⏳ TBD",
+    "algeria": "⏳ May 31",
+    "argentina": "⏳ TBD",
+    "jordan": "⏳ TBD",
+    "colombia": "⏳ Jun 1",
+    "uzbekistan": "⏳ TBD",
+    "ghana": "⏳ TBD",
+    "panama": "⏳ May 26",
+    "usa": "⏳ May 26",
+    "uruguay": "⏳ TBD",
+    "england": "⏳ TBD",
+    "sweden": "⏳ May 27",
+    "newZealand": "⏳ May 23",
+    "austria": "⏳ May 28",
+    "scotland": "⏳ May 26",
+    "haiti": "⏳ May 23",
+    "ivoryCoast": "⏳ May 25",
+    "curaçao": "⏳ TBD",
+    "tunisia": "⏳ May 29",
+    "capeVerde": "⏳ TBD",
+    "drCongo": "⏳ TBD",
+    "bosnia": "⏳ May 22"
+  }
+}

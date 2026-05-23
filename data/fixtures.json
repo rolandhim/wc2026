@@ -1,0 +1,506 @@
+[
+  {
+    "d": "Jun 11",
+    "a": "Mexico",
+    "b": "South Africa",
+    "g": "A",
+    "v": "Estadio Azteca"
+  },
+  {
+    "d": "Jun 11",
+    "a": "South Korea",
+    "b": "Czech Republic",
+    "g": "A",
+    "v": "Estadio Akron"
+  },
+  {
+    "d": "Jun 12",
+    "a": "Canada",
+    "b": "Bosnia & Herzegovina",
+    "g": "B",
+    "v": "BMO Field"
+  },
+  {
+    "d": "Jun 12",
+    "a": "United States",
+    "b": "Paraguay",
+    "g": "D",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 13",
+    "a": "Qatar",
+    "b": "Switzerland",
+    "g": "B",
+    "v": "BC Place"
+  },
+  {
+    "d": "Jun 13",
+    "a": "Australia",
+    "b": "Turkey",
+    "g": "D",
+    "v": "Lumen Field"
+  },
+  {
+    "d": "Jun 13",
+    "a": "Brazil",
+    "b": "Morocco",
+    "g": "C",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 13",
+    "a": "Haiti",
+    "b": "Scotland",
+    "g": "C",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 14",
+    "a": "Netherlands",
+    "b": "Japan",
+    "g": "F",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 14",
+    "a": "Sweden",
+    "b": "Tunisia",
+    "g": "F",
+    "v": "Gillette Stadium"
+  },
+  {
+    "d": "Jun 14",
+    "a": "Germany",
+    "b": "Curaçao",
+    "g": "E",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 14",
+    "a": "Ivory Coast",
+    "b": "Ecuador",
+    "g": "E",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 15",
+    "a": "Spain",
+    "b": "Cape Verde",
+    "g": "H",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 15",
+    "a": "Saudi Arabia",
+    "b": "Uruguay",
+    "g": "H",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 15",
+    "a": "Belgium",
+    "b": "Egypt",
+    "g": "G",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 15",
+    "a": "Iran",
+    "b": "New Zealand",
+    "g": "G",
+    "v": "AT&T Stadium"
+  },
+  {
+    "d": "Jun 16",
+    "a": "France",
+    "b": "Senegal",
+    "g": "I",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 16",
+    "a": "Iraq",
+    "b": "Norway",
+    "g": "I",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 16",
+    "a": "Argentina",
+    "b": "Algeria",
+    "g": "J",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 16",
+    "a": "Austria",
+    "b": "Jordan",
+    "g": "J",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 17",
+    "a": "Portugal",
+    "b": "DR Congo",
+    "g": "K",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 17",
+    "a": "Uzbekistan",
+    "b": "Colombia",
+    "g": "K",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 17",
+    "a": "England",
+    "b": "Croatia",
+    "g": "L",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 17",
+    "a": "Ghana",
+    "b": "Panama",
+    "g": "L",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 18",
+    "a": "Czech Republic",
+    "b": "South Africa",
+    "g": "A",
+    "v": "Estadio BBVA"
+  },
+  {
+    "d": "Jun 18",
+    "a": "Mexico",
+    "b": "South Korea",
+    "g": "A",
+    "v": "Estadio Azteca"
+  },
+  {
+    "d": "Jun 18",
+    "a": "Switzerland",
+    "b": "Bosnia & Herzegovina",
+    "g": "B",
+    "v": "BC Place"
+  },
+  {
+    "d": "Jun 18",
+    "a": "Canada",
+    "b": "Qatar",
+    "g": "B",
+    "v": "BMO Field"
+  },
+  {
+    "d": "Jun 19",
+    "a": "Scotland",
+    "b": "Morocco",
+    "g": "C",
+    "v": "Lumen Field"
+  },
+  {
+    "d": "Jun 19",
+    "a": "Brazil",
+    "b": "Haiti",
+    "g": "C",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 19",
+    "a": "United States",
+    "b": "Australia",
+    "g": "D",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 19",
+    "a": "Turkey",
+    "b": "Paraguay",
+    "g": "D",
+    "v": "Lumen Field"
+  },
+  {
+    "d": "Jun 20",
+    "a": "Ivory Coast",
+    "b": "Curaçao",
+    "g": "E",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 20",
+    "a": "Germany",
+    "b": "Ecuador",
+    "g": "E",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 20",
+    "a": "Japan",
+    "b": "Tunisia",
+    "g": "F",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 20",
+    "a": "Netherlands",
+    "b": "Sweden",
+    "g": "F",
+    "v": "Gillette Stadium"
+  },
+  {
+    "d": "Jun 21",
+    "a": "Egypt",
+    "b": "New Zealand",
+    "g": "G",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 21",
+    "a": "Belgium",
+    "b": "Iran",
+    "g": "G",
+    "v": "AT&T Stadium"
+  },
+  {
+    "d": "Jun 21",
+    "a": "Cape Verde",
+    "b": "Uruguay",
+    "g": "H",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 21",
+    "a": "Spain",
+    "b": "Saudi Arabia",
+    "g": "H",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 22",
+    "a": "Senegal",
+    "b": "Norway",
+    "g": "I",
+    "v": "Gillette Stadium"
+  },
+  {
+    "d": "Jun 22",
+    "a": "France",
+    "b": "Iraq",
+    "g": "I",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 22",
+    "a": "Algeria",
+    "b": "Jordan",
+    "g": "J",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 22",
+    "a": "Argentina",
+    "b": "Austria",
+    "g": "J",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 23",
+    "a": "DR Congo",
+    "b": "Colombia",
+    "g": "K",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 23",
+    "a": "Portugal",
+    "b": "Uzbekistan",
+    "g": "K",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 23",
+    "a": "Croatia",
+    "b": "Panama",
+    "g": "L",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 23",
+    "a": "England",
+    "b": "Ghana",
+    "g": "L",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 24",
+    "a": "Mexico",
+    "b": "Czech Republic",
+    "g": "A",
+    "v": "Estadio Azteca"
+  },
+  {
+    "d": "Jun 24",
+    "a": "South Africa",
+    "b": "South Korea",
+    "g": "A",
+    "v": "Estadio Akron"
+  },
+  {
+    "d": "Jun 24",
+    "a": "Canada",
+    "b": "Switzerland",
+    "g": "B",
+    "v": "BC Place"
+  },
+  {
+    "d": "Jun 24",
+    "a": "Bosnia & Herzegovina",
+    "b": "Qatar",
+    "g": "B",
+    "v": "BMO Field"
+  },
+  {
+    "d": "Jun 25",
+    "a": "Brazil",
+    "b": "Scotland",
+    "g": "C",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 25",
+    "a": "Morocco",
+    "b": "Haiti",
+    "g": "C",
+    "v": "Lumen Field"
+  },
+  {
+    "d": "Jun 25",
+    "a": "United States",
+    "b": "Turkey",
+    "g": "D",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 25",
+    "a": "Paraguay",
+    "b": "Australia",
+    "g": "D",
+    "v": "Lumen Field"
+  },
+  {
+    "d": "Jun 26",
+    "a": "Germany",
+    "b": "Ivory Coast",
+    "g": "E",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 26",
+    "a": "Ecuador",
+    "b": "Curaçao",
+    "g": "E",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 26",
+    "a": "Netherlands",
+    "b": "Tunisia",
+    "g": "F",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 26",
+    "a": "Sweden",
+    "b": "Japan",
+    "g": "F",
+    "v": "Gillette Stadium"
+  },
+  {
+    "d": "Jun 27",
+    "a": "Belgium",
+    "b": "New Zealand",
+    "g": "G",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 27",
+    "a": "Iran",
+    "b": "Egypt",
+    "g": "G",
+    "v": "AT&T Stadium"
+  },
+  {
+    "d": "Jun 27",
+    "a": "Spain",
+    "b": "Uruguay",
+    "g": "H",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 27",
+    "a": "Saudi Arabia",
+    "b": "Cape Verde",
+    "g": "H",
+    "v": "NRG Stadium"
+  },
+  {
+    "d": "Jun 28",
+    "a": "France",
+    "b": "Norway",
+    "g": "I",
+    "v": "Gillette Stadium"
+  },
+  {
+    "d": "Jun 28",
+    "a": "Iraq",
+    "b": "Senegal",
+    "g": "I",
+    "v": "MetLife Stadium"
+  },
+  {
+    "d": "Jun 28",
+    "a": "Argentina",
+    "b": "Jordan",
+    "g": "J",
+    "v": "Hard Rock Stadium"
+  },
+  {
+    "d": "Jun 28",
+    "a": "Austria",
+    "b": "Algeria",
+    "g": "J",
+    "v": "MBS Atlanta"
+  },
+  {
+    "d": "Jun 29",
+    "a": "Portugal",
+    "b": "Colombia",
+    "g": "K",
+    "v": "SoFi Stadium"
+  },
+  {
+    "d": "Jun 29",
+    "a": "Uzbekistan",
+    "b": "DR Congo",
+    "g": "K",
+    "v": "Levi's Stadium"
+  },
+  {
+    "d": "Jun 29",
+    "a": "England",
+    "b": "Panama",
+    "g": "L",
+    "v": "Lincoln Financial"
+  },
+  {
+    "d": "Jun 29",
+    "a": "Ghana",
+    "b": "Croatia",
+    "g": "L",
+    "v": "MetLife Stadium"
+  }
+]

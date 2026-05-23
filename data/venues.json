@@ -1,0 +1,100 @@
+[
+  {
+    "n": "AT&T Stadium",
+    "c": "Arlington, TX",
+    "t": "us",
+    "p": "94,000",
+    "x": "🏆 Semi"
+  },
+  {
+    "n": "Estadio Azteca",
+    "c": "Mexico City",
+    "t": "mx",
+    "p": "83,000"
+  },
+  {
+    "n": "MetLife Stadium",
+    "c": "East Rutherford, NJ",
+    "t": "us",
+    "p": "82,500",
+    "x": "🏆 FINAL"
+  },
+  {
+    "n": "Mercedes-Benz Stadium",
+    "c": "Atlanta, GA",
+    "t": "us",
+    "p": "75,000"
+  },
+  {
+    "n": "Arrowhead Stadium",
+    "c": "Kansas City, MO",
+    "t": "us",
+    "p": "73,000"
+  },
+  {
+    "n": "NRG Stadium",
+    "c": "Houston, TX",
+    "t": "us",
+    "p": "72,000"
+  },
+  {
+    "n": "Levi's Stadium",
+    "c": "Santa Clara, CA",
+    "t": "us",
+    "p": "71,000"
+  },
+  {
+    "n": "SoFi Stadium",
+    "c": "Inglewood, CA",
+    "t": "us",
+    "p": "70,000"
+  },
+  {
+    "n": "Lincoln Financial Field",
+    "c": "Philadelphia, PA",
+    "t": "us",
+    "p": "69,000"
+  },
+  {
+    "n": "Lumen Field",
+    "c": "Seattle, WA",
+    "t": "us",
+    "p": "69,000"
+  },
+  {
+    "n": "Gillette Stadium",
+    "c": "Foxborough, MA",
+    "t": "us",
+    "p": "65,000"
+  },
+  {
+    "n": "Hard Rock Stadium",
+    "c": "Miami Gardens, FL",
+    "t": "us",
+    "p": "65,000"
+  },
+  {
+    "n": "BC Place",
+    "c": "Vancouver, BC",
+    "t": "ca",
+    "p": "54,000"
+  },
+  {
+    "n": "Estadio BBVA",
+    "c": "Monterrey",
+    "t": "mx",
+    "p": "53,500"
+  },
+  {
+    "n": "Estadio Akron",
+    "c": "Guadalajara",
+    "t": "mx",
+    "p": "48,000"
+  },
+  {
+    "n": "BMO Field",
+    "c": "Toronto, ON",
+    "t": "ca",
+    "p": "45,000"
+  }
+]
