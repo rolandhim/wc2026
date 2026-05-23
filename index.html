@@ -264,8 +264,7 @@ footer{text-align:center;padding:2rem;color:var(--text2);font-size:.75rem;border
 <div class="nav-overlay" id="dropOverlay" onclick="closeDrop()"></div>
 
 <div class="page" id="phome">
-  <div class="loading" id="phomeload"><div class="spinner"></div><p>載入中...</p></div>
-  <div id="phomecontent" style="display:none">
+  <div id="phomecontent">
   <section class="hero">
     <div class="hero-imgs">
       <img class="hero-trophy" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FIFA_World_Cup_Trophy_2002.png/150px-FIFA_World_Cup_Trophy_2002.png" alt="" onerror="this.style.display='none'">
@@ -379,9 +378,6 @@ function tk(n){return TK[n]}
 
 // ═══ LOAD ═══
 async function loadData(showLoading){
-  let loader=document.getElementById('phomeload');
-  let content=document.getElementById('phomecontent');
-  if(showLoading){loader.style.display='flex';if(content)content.style.display='none'}
   try{
     let [g,f,v,s]=await Promise.all([
       fetch('data/groups.json?_='+Date.now()).then(r=>r.json()),
@@ -394,9 +390,8 @@ async function loadData(showLoading){
     META.updated=s.meta?.updated||new Date().toISOString();
     buildPlayerIndex();
     init();
-    loader.style.display='none';if(content)content.style.display='block'
   }catch(e){
-    loader.innerHTML='<div class="section"><div class="section-title">❌ 載入失敗</div><p style="color:var(--text2)">'+e.message+'</p><button class="refresh-btn" onclick="loadData(true)" style="margin-top:.5rem">再試</button></div>';
+    console.error('Load error:',e);
   }
 }
 
@@ -473,10 +468,6 @@ function openSearchTeam(key){
 async function refreshData(){
   let btn=document.getElementById('refbtn');
   btn.classList.add('spin');
-  let loader=document.getElementById('phomeload');
-  let content=document.getElementById('phomecontent');
-  if(loader)loader.style.display='flex';
-  if(content)content.style.display='none';
   await loadData(false);
   btn.classList.remove('spin');
 }
